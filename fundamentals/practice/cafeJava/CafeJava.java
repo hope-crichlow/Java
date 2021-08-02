@@ -32,11 +32,33 @@ public class CafeJava {
 
         // Cindhuri ordered a coffee. Show her the correct status message.
 
-        // If isReadyOrder1 == true, print ready message + displayToalMessage + dripCoffeePrice, else print pendingMessage
+            // If isReadyOrder1 == true, print ready message + displayToalMessage + dripCoffeePrice, else print pendingMessage
         if(isReadyOrder1 == true){
             System.out.println(customer1 + readyMessage + ". " + displayTotalMessage + dripCoffeePrice + ".");
         } else {
             System.out.println(customer1 + pendingMessage + ".");
         }
+
+        // Noah ordered a cappucino. Check the status of his order and let him know. If it is ready, also tell him his total.
+        System.out.println(generalGreeting + customer4);
+        if(isReadyOrder2 == true){
+            System.out.println(customer4 + readyMessage + ". " + displayTotalMessage + cappucinoPrice + ".");
+        } else {
+            System.out.println(customer4 + pendingMessage + ".");
+        }
+
+        // Sam just order 2 lattes, and would like the total up front. Also give them their order status.
+        System.out.println(generalGreeting + customer2);
+        System.out.println(displayTotalMessage + lattePrice*2 );
+
+        if(isReadyOrder3 == true){
+            System.out.println(customer2 + readyMessage + ". " + displayTotalMessage + lattePrice*2 + ".");
+        } else {
+            System.out.println(customer2 + pendingMessage + ".");
+        }
+
+        // Jimmy just realized he was charged for a coffee but had ordered a latte. Tell him his new total (what he owes) to make up the difference.
+        System.out.println(generalGreeting + customer3);
+        System.out.println("Your new total is $" + (lattePrice-dripCoffeePrice) + ".");
     }
 }
