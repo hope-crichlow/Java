@@ -1,4 +1,4 @@
-import java.util.Date
+import java.util.Date;
 public class AlfredQuotes {
      /*
     * Inputs: None
@@ -21,7 +21,11 @@ public class AlfredQuotes {
     */
     public String guestGreeting(String name, String dayPeriod) {
         // YOUR CODE HERE
-        return "place holder for guest greeting return string";
+        // String name = name;
+        // String dayPeriod = dayPeriod;
+        String greetGuest = "Good " + dayPeriod + ", " + name + ". ";
+        String pleasantry = "Lovely to see you.";
+        return greetGuest + pleasantry;
     }
     /* 
     * Inputs: None
