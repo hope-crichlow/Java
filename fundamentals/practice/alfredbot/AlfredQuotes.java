@@ -62,13 +62,13 @@ public class AlfredQuotes {
             // Return snarky comment
             return "Right away, sir. She certainly isn't sophisticated enough for that.";
         }
-
         // If "Alfred" appears in conversation
-        // Return an obliging response
-
-        // If neither name is found
-        // Return an appropriate response
-        return "place holder for snarky response return string";
+        if(conversation.indexOf("Alfred") > -1){
+            // Return an obliging response
+            return "At your service. As you wish, naturally.";
+        }
+        // If neither name is found, return an appropriate response
+        return "Right. And with that I shall retire.";
     }
     // NINJA BONUS
     // Write your own AlfredQuote method using any of the String methods you have learned!
