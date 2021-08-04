@@ -7,9 +7,14 @@ public class TestCafe {
 // in order to use the methods. Hint: it will need 
 // to correspond with the variable name used below..
         CafeUtil appTest = new CafeUtil();
+
 // App Test Cases
-    System.out.println("----- Military Hours Test -----");
-    appTest.militaryHoursTest();
+
+    // System.out.println("----- Military Hours Test -----");
+    // appTest.militaryHoursTest();
+
+    System.out.println("----- Coffee Notification Test -----");
+    appTest.coffeeNotification();
 
     // System.out.println("----- Special Alerts Test -----");
     // appTest.specialsAlert();

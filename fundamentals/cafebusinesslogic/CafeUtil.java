@@ -8,10 +8,13 @@ public class CafeUtil {
         }
     }
 
-
 // (void) coffeeNotification
-// Starting at 0 and ending after 23, for every hour in the day, print out each hour as a string like so: "It's 4:00 hours, do you need a coffee break?". Hint: Use String.format() to put the hour integer in the string. Note: you do not need to include any leading zeros.
-
+// Starting at 0 and ending after 23, for every hour in the day, print out each hour as a string like so: "It's 4:00 hours, do you need a coffee break?". 
+    public void coffeeNotification(){
+        for(int i=0; i<24; i ++){
+            System.out.println("It's " + i + ":00 hours, do you need a coffee break?");
+        }
+    }
 
 // (void) specialsAlert
 // Starting at 6 and ending at 15, iterate through each number, representing an hour, if the hour is a multiple of 3, print "Buy one get one free for the next 15 minutes!" Otherwise, print "Stay tuned for deals announced throughout the day."
