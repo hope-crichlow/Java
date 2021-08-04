@@ -22,6 +22,8 @@ public class AlfredTest {
             "Maybe that's what Batman is about. Not winning. But failing.."
         );
         
+        String funFactTest = alfredBot.funFact();
+        
         // Print the greetings to test.
         System.out.println(testGreeting);
         
@@ -31,6 +33,7 @@ public class AlfredTest {
         System.out.println(alexisTest);
         System.out.println(alfredTest);
         System.out.println(notRelevantTest);
-        // System.out.println(funFactTest);
+        //NINJA BONUS 
+        System.out.println(funFactTest);
     }
 }

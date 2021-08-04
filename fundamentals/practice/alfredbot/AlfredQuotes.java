@@ -20,20 +20,23 @@ public class AlfredQuotes {
     * Tip: Try using the String.format method for string interpolation in Java.
     */
     public String guestGreeting(String name, String dayPeriod) {
-        // YOUR CODE HERE
+
         String greetGuest = "Good " + dayPeriod + ", " + name + ". ";
         String pleasantry = "Lovely to see you.";
+
         return greetGuest + pleasantry;
 
     }
+
     /* 
     * Inputs: None
     * Return Type: String
     * Description: Returns a polite announcement of the current date.
     */
     public String dateAnnouncement() {
-        // YOUR CODE HERE
+
         Date todaysDate = new Date();
+
         return "Today is  " + todaysDate;
     }
     
@@ -49,6 +52,7 @@ public class AlfredQuotes {
     If neither name is found, return an appropriate response, for instance:
     "Right. And with that I shall retire." 
     **********************************************/
+
     /*
     * Inputs: String (A conversation)
     * Return Type: String (Something Alfred would say in response)
@@ -56,7 +60,7 @@ public class AlfredQuotes {
     * Tip: Use the indexOf String method
     */
     public String respondBeforeAlexis(String conversation) {
-        // YOUR CODE HERE
+
         // If "Alexis" appears in conversation
         if(conversation.indexOf("Alexis") > -1){
             // Return snarky comment
@@ -70,7 +74,16 @@ public class AlfredQuotes {
         // If neither name is found, return an appropriate response
         return "Right. And with that I shall retire.";
     }
+
     // NINJA BONUS
     // Write your own AlfredQuote method using any of the String methods you have learned!
+    /* 
+    * Inputs: None
+    * Return Type: String
+    * Description: Returns a fun fact.
+    */
+    public String funFact(){
+        return "Fun Fact: Coconut trees have the ability to convert heavy salty water into fresh useable water. Coconut trees are halophytes. Halophytes are salt-tolerant plants that grow in waters or soils with high levels of salinity. Whereas saltwater kills most plants, coconut trees grow in and around the sea unperturbed.";
+    }
 }
 
