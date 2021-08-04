@@ -16,10 +16,12 @@ public class TestCafe {
     // System.out.println("----- Coffee Notification Test -----");
     // appTest.coffeeNotification();
 
-    System.out.println("----- Special Alerts Test -----");
-    appTest.specialsAlert();
+    // System.out.println("----- Special Alerts Test -----");
+    // appTest.specialsAlert();
 
-    // System.out.printf("Leads at day 10: %s \n", appTest.leadsAtDay10());
+    System.out.println("----- Leads At Day 10 Test -----");
+    // appTest.leadsAtDay10();
+    System.out.printf("Leads at day 10: %s \n", appTest.leadsAtDay10());
     
     // System.out.println("----- Display Menu Test-----");
 
