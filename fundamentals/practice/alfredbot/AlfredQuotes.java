@@ -57,6 +57,15 @@ public class AlfredQuotes {
     */
     public String respondBeforeAlexis(String conversation) {
         // YOUR CODE HERE
+        // If "Alexis" appears in conversation
+        
+        // Return snarky comment
+
+        // If "Alfred" appears in conversation
+        // Return an obliging response
+
+        // If neither name is found
+        // Return an appropriate response
         return "place holder for snarky response return string";
     }
     // NINJA BONUS
