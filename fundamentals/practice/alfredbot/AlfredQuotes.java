@@ -58,8 +58,10 @@ public class AlfredQuotes {
     public String respondBeforeAlexis(String conversation) {
         // YOUR CODE HERE
         // If "Alexis" appears in conversation
-        
-        // Return snarky comment
+        if(conversation.indexOf("Alexis") > -1){
+            // Return snarky comment
+            return "Right away, sir. She certainly isn't sophisticated enough for that.";
+        }
 
         // If "Alfred" appears in conversation
         // Return an obliging response
