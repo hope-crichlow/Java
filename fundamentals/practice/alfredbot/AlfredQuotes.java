@@ -1,6 +1,6 @@
 import java.util.Date;
 public class AlfredQuotes {
-     /*
+    /*
     * Inputs: None
     * Return Type: String
     * Description: Returns a generic greeting that Alfred will say to anyone.
@@ -21,11 +21,10 @@ public class AlfredQuotes {
     */
     public String guestGreeting(String name, String dayPeriod) {
         // YOUR CODE HERE
-        // String name = name;
-        // String dayPeriod = dayPeriod;
         String greetGuest = "Good " + dayPeriod + ", " + name + ". ";
         String pleasantry = "Lovely to see you.";
         return greetGuest + pleasantry;
+
     }
     /* 
     * Inputs: None
@@ -34,7 +33,8 @@ public class AlfredQuotes {
     */
     public String dateAnnouncement() {
         // YOUR CODE HERE
-        return "place holder for date announcement return string";
+        Date todaysDate = new Date();
+        return "Today is  " + todaysDate;
     }
     
     /*********************************************
