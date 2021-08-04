@@ -18,6 +18,15 @@ public class CafeUtil {
 
 // (void) specialsAlert
 // Starting at 6 and ending at 15, iterate through each number, representing an hour, if the hour is a multiple of 3, print "Buy one get one free for the next 15 minutes!" Otherwise, print "Stay tuned for deals announced throughout the day."
+    public void specialsAlert(){
+        for(int i=6; i<16; i++){
+            if(i % 3 == 0){
+                System.out.println("Buy one get one free for the next 15 minutes");
+            } else {
+                System.out.println("Stay tuned for deals announced throughout the day."); 
+            }
+        }
+    }
 
 
 // (int) leadsAtDay10
