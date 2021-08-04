@@ -1,14 +1,15 @@
 import java.util.ArrayList;
+
 public class TestCafe {
     public static void main(String[] args) {
 // All you need to add in this file:
 // Create an instance of the CafeUtil class
 // in order to use the methods. Hint: it will need 
 // to correspond with the variable name used below..
-
+        CafeUtil appTest = new CafeUtil();
 // App Test Cases
     System.out.println("----- Military Hours Test -----");
-    // appTest.militaryHoursTest();
+    appTest.militaryHoursTest();
 
     // System.out.println("----- Special Alerts Test -----");
     // appTest.specialsAlert();

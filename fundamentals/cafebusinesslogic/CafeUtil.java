@@ -3,7 +3,9 @@ public class CafeUtil {
 //(void) militaryHoursTest
 // Write a method that prints all the numbers from 0 to 23.
     public void militaryHoursTest(){
-
+        for(int i=0; i<24; i++){
+            System.out.println(i);
+        }
     }
 
 
