@@ -1,3 +1,4 @@
+// import java.util.ArrayList;
 public class CafeUtil {
 
 //(void) militaryHoursTest
@@ -33,7 +34,7 @@ public class CafeUtil {
 // Starting with 1, sum together all the numbers from 1 to 10. This will calculate how many leads a sales rep needs to have after 10 days to get the reward for that period. Return the sum after it has been calculated.
     public int leadsAtDay10(){
         int sum = 0;
-        
+
         for(int i=1; i<11; i ++){
             sum += i;
         }
@@ -43,7 +44,18 @@ public class CafeUtil {
 
 // (void) displayMenu
 // Given an array of menu item names (strings), iterate through the array and print all the menu items in the array.
+    public void displayMenu(String[] menu){
+        // System.out.println(menu);
+        // System.out.println(menu.length);
 
+        // for(int i=0; i<=menu.length; i++){
+        //     String menuItem = menu[i];
+        //     System.out.println(menuItem);
+        // }
+        for(String menuItem : menu){
+            System.out.println(menuItem);
+        }
+    }
 
 // (double) getOrderTotal
 // Given an array of the prices from the items in a customer order, iterate over the array to sum each item price and to return the total

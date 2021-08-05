@@ -19,27 +19,29 @@ public class TestCafe {
     // System.out.println("----- Special Alerts Test -----");
     // appTest.specialsAlert();
 
-    System.out.println("----- Leads At Day 10 Test -----");
+    // System.out.println("----- Leads At Day 10 Test -----");
     // appTest.leadsAtDay10();
-    System.out.printf("Leads at day 10: %s \n", appTest.leadsAtDay10());
+    // System.out.printf("Leads at day 10: %s \n", appTest.leadsAtDay10());
     
-    // System.out.println("----- Display Menu Test-----");
+    System.out.println("----- Display Menu Test-----");
 
-    // String[] menu1 = {
-    //     "drip coffee -- $1.50",
-    //     "cappucino -- $3.50",
-    //     "latte -- $4.50",
-    //     "mocha -- $3.50"
-    //     };
-    // String[] menu2 = {
-    //     "bagel -- $1.50",
-    //     "avocado toast -- $6.50",
-    //     "croissant -- $4.00",
-    //     "quiche -- $2.00"
-    //     };
+    String[] menu1 = {
+        "drip coffee -- $1.50",
+        "cappucino -- $3.50",
+        "latte -- $4.50",
+        "mocha -- $3.50"
+        };
+    String[] menu2 = {
+        "bagel -- $1.50",
+        "avocado toast -- $6.50",
+        "croissant -- $4.00",
+        "quiche -- $2.00"
+        };
+    System.out.println("----- Menu 1-----");
+    appTest.displayMenu(menu1);
 
-    // appTest.displayMenu(menu1);
-    // appTest.displayMenu(menu2);
+    System.out.println("----- Menu 2-----");
+    appTest.displayMenu(menu2);
     
     // double[] lineItems = {3.5, 1.5, 4.0, 4.5};
     // System.out.printf("Order total: %s \n",appTest.getOrderTotal(lineItems));
