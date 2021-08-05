@@ -17,9 +17,18 @@ public class PuzzleJava {
 
 // getRandomLetter
 // Write a method that will:
-// Create an array within the method that contains all 26 letters of the alphabet (this array must have 26 values). 
+
+
+    public char getRandomLetter(){
+// Create an array within the method that contains all 26 letters of the alphabet. 
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+// This array must have 26 values.
+        // System.out.println("Alphabet Array Length:" + alphabet.length);
 // Generate a random index between 0-25, and use it to pull a random letter out of the array.
+        char randomLetter = alphabet[randMachine.nextInt(26)];
 // Return the random letter.
+        return randomLetter;
+    }
 
 // generatePassword
 // Write a method that uses the previous method to create a random string of eight characters, and return that string.
