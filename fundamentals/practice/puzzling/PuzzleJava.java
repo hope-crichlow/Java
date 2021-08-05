@@ -10,7 +10,7 @@ public class PuzzleJava {
     public int[] getTenRolls(){
         int[] tenRolls = new int[10];
         for(int i=0; i < 10; i++){
-            tenRolls[i] = randMachine.nextInt(20-1) + 1;
+            tenRolls[i] = randMachine.nextInt(21);
         }
         return tenRolls;
     }
