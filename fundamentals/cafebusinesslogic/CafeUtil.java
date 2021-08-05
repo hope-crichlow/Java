@@ -47,11 +47,6 @@ public class CafeUtil {
     public void displayMenu(String[] menu){
         // System.out.println(menu);
         // System.out.println(menu.length);
-
-        // for(int i=0; i<=menu.length; i++){
-        //     String menuItem = menu[i];
-        //     System.out.println(menuItem);
-        // }
         for(String menuItem : menu){
             System.out.println(menuItem);
         }
@@ -59,6 +54,13 @@ public class CafeUtil {
 
 // (double) getOrderTotal
 // Given an array of the prices from the items in a customer order, iterate over the array to sum each item price and to return the total
+    public double getOrderTotal(double[] order){
+        double orderTotal = 0.00;
+        for(double eachPrice : order){
+            orderTotal += eachPrice;
+        }
+        return orderTotal;
+    }
 
 
 // (double) getHighestPrice
