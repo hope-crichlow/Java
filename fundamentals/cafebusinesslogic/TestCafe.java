@@ -45,16 +45,16 @@ public class TestCafe {
     // double[] lineItems = {3.5, 1.5, 4.0, 4.5};
     // System.out.printf("Order total: %s \n",appTest.getOrderTotal(lineItems));
 
-    System.out.println("----- Get Highest Price Test-----");
-    double[] priceIndex = {1.5, 3.5, 4.5, 3.5, 1.5, 6.5, 4, 2};
-    System.out.printf("Highest price: %s \n",appTest.getHighestPrice(priceIndex));
+    // System.out.println("----- Get Highest Price Test-----");
+    // double[] priceIndex = {1.5, 3.5, 4.5, 3.5, 1.5, 6.5, 4, 2};
+    // System.out.printf("Highest price: %s \n",appTest.getHighestPrice(priceIndex));
     
-    // System.out.println("----- Get Raffle Winners Test-----");
-    // String[] customers = {
-    //     "Cindhuri", "Noah", "Sam", "Jimmy", 
-    //     "Ian Curtis", "Ada", "Brandon Stantman", 
-    //     "Zoe", "Jesse"};
-    // System.out.println(appTest.raffleWinners(customers));
+    System.out.println("----- Get Raffle Winners Test-----");
+    String[] customers = {
+        "Cindhuri", "Noah", "Sam", "Jimmy", 
+        "Ian Curtis", "Ada", "Brandon Stantman", 
+        "Zoe", "Jesse"};
+    System.out.println(appTest.raffleWinners(customers));
         
     }
 }
