@@ -42,10 +42,14 @@ public class PuzzleJava {
     }
 
 // getNewPasswordSet
-// Write a method that takes an int length as an argument and creates an array of random eight character words. The array should be the length passed in as an int.
+    public String[] getNewPasswordSet(int amountOfNewPasswords){
+// Take in an int length as an argument and create an array.
+        String[] passwordSet = new String[amountOfNewPasswords];
+// Create an array, of the given length, of random eight character words.
+        for(int i=0; i< amountOfNewPasswords; i++){
+            passwordSet[i] = this.generatePassword();
+        }
+        return passwordSet;
+    }
 
-
-
-// SENSEI BONUS: shuffleArray
-// Write a method that takes an array and and mixes up all the values in a pseudo-random way. Hint: use random indexes within the array, and swap values repeatedly. 
 }

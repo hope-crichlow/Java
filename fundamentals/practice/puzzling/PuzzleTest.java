@@ -15,14 +15,14 @@ public class PuzzleTest {
         // appTest.getRandomLetter();
         // System.out.println("Random Letter: " + appTest.getRandomLetter());
         
+        // System.out.println("----- Generate Password Test -----");
+        // appTest.generatePassword();
+        // System.out.println("Generated Password: " + appTest.generatePassword());
 
-        System.out.println("----- Generate Password Test -----");
-        appTest.generatePassword();
-        System.out.println("Generated Password: " + appTest.generatePassword());
-        
-        // System.out.println("----- Get New Password Set Test -----");
+        System.out.println("----- Get New Password Set Test -----");
         // appTest.getNewPasswordSet();
-        // System.out.println("----- Shuffle Array Test -----");
-        // appTest.shuffleArray();
+        System.out.println("New Password Set: " + Arrays.toString(appTest.getNewPasswordSet(4)));
+        System.out.println("New Password Set: " + Arrays.toString(appTest.getNewPasswordSet(6)));
+
     }
 }
