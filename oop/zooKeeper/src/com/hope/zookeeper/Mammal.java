@@ -7,7 +7,6 @@ public class Mammal {
 	
 	public int displayEnergy() {
 		System.out.println("Energy Level: " + this.energyLevel);
-//		System.out.println("Energy level is now: " + this.energyLevel);
 		
 		return this.energyLevel;
 	}
