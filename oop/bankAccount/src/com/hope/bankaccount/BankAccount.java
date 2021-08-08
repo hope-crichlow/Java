@@ -47,23 +47,52 @@ public class BankAccount {
 	}
 	
 	
+	
 //	OTHER METHODS
 //	Method: Deposit money into either the checking or saving, be sure to add to total amount stored.
 	public void deposit(String accountType, double depositAmount) {
 		
-		if(accountType.equals("savings")) {
+		String account = accountType.toLowerCase();
+		
+		if(account.equals("savings")) {
 			this.savingsBalance += depositAmount;
 			
 			cashTotal += depositAmount;	
 			
-		}else if(accountType.equals("checking")) {
+		}else if(account.equals("checking")) {
 			this.checkingBalance += depositAmount;
 			
 			cashTotal += depositAmount;	
 		}
 	}
 	
-	
 //	Method: Withdraw money from one balance. Do not allow them to withdraw money if there are insufficient funds.
+	public void withdraw(String accountType, double withdrawlAmount) {
+		String account = accountType.toLowerCase();
+		
+		if(account.equals("savings")) {
+			
+			if(this.savingsBalance >= withdrawlAmount) {
+				
+				this.savingsBalance -= withdrawlAmount;
+				cashTotal -= withdrawlAmount;
+				
+			} else {
+				System.out.println("Insufficient Funds");
+			}
+				
+		} else if(account.equals("checking")){
+			
+			if(this.checkingBalance >= withdrawlAmount) {
+				
+				this.checkingBalance -= withdrawlAmount;
+				cashTotal -= withdrawlAmount;
+				
+			} else {
+				System.out.println("Insufficient Funds");
+			}
+		}
+		
+	}
 
 }
