@@ -4,12 +4,17 @@ public class BankAccount {
 
 //	MEMBER VARIABLES
 //	Attribute: (double) checking balance
+	private double checkingBalance;
 //	Attribute: (double) savings balance.
+	private double savingsBalance;
 //	Class Member: (static) that has the number of accounts created thus far.
+	private static int numberOfAccounts = 0;
 //	Class Member: (static) that tracks the total amount of money stored in every account created.
+	private static int cashTotal = 0;
 	
 //	CONSTRUCTOR METHODS
 //	Increment the account count.
+	
 	
 //	GETTERS AND SETTERS
 //	Users should not be able to set any of the attributes from the class.
