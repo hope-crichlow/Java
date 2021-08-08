@@ -17,10 +17,10 @@ public class BankAccountTest {
 //		System.out.println("----- Savings Balance Test -----");
 //		
 //		System.out.println("Savings Balance: $" + b.getSavingsBalance());
-//		
-//		System.out.println("----- Total Balance Test -----");
-//		
-//		System.out.println("Total Balance: $" + b.getTotalBalance());
+		
+		System.out.println("----- Total Balance Test -----");
+		
+		System.out.println("Total Balance: $" + b.getTotalBalance());
 		
 		
 		
@@ -39,7 +39,7 @@ public class BankAccountTest {
 		
 		
 //		System.out.println("----- Withdrawal Test -----");
-//		
+//		 
 //		System.out.println("User's Total Balance: $" + b.getTotalBalance());
 //		
 //		b.withdraw("checking", 150);
