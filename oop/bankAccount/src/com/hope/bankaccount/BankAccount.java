@@ -3,6 +3,7 @@ package com.hope.bankaccount;
 public class BankAccount {
 
 //	MEMBER VARIABLES
+	
 //	Attribute: (double) checking balance
 	private double checkingBalance;
 //	Attribute: (double) savings balance.
@@ -11,11 +12,25 @@ public class BankAccount {
 	private static int numberOfAccounts = 0;
 //	Class Member: (static) that tracks the total amount of money stored in every account created.
 	private static int cashTotal = 0;
-	
+
 //	CONSTRUCTOR METHODS
+	
+//	Empty constructor setting default attributes
+	public BankAccount() {
+		this.checkingBalance = 0;
+		this.savingsBalance = 0;
+//		Increment the account count.
+		numberOfAccounts ++;
+	}
+	
+	public BankAccount(double checkingBalance, double savingsBalance) {
+
+		this.checkingBalance = checkingBalance;
+		this.savingsBalance = savingsBalance;
 //	Increment the account count.
-	
-	
+		numberOfAccounts ++;
+	}
+		
 //	GETTERS AND SETTERS
 //	Users should not be able to set any of the attributes from the class.
 
