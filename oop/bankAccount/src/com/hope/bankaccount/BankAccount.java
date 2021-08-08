@@ -13,6 +13,8 @@ public class BankAccount {
 //	Class Member: (static) that tracks the total amount of money stored in every account created.
 	public static int cashTotal = 0;
 
+	
+	
 //	CONSTRUCTOR METHODS
 	
 //	Empty constructor setting default attributes
@@ -30,6 +32,8 @@ public class BankAccount {
 		numberOfAccounts ++;
 	}
 		
+	
+	
 //	GETTERS AND SETTERS
 //	Users should not be able to set any of the attributes from the class.
 
@@ -49,7 +53,9 @@ public class BankAccount {
 	
 	
 //	OTHER METHODS
+	
 //	Method: Deposit money into either the checking or saving, be sure to add to total amount stored.
+	
 	public void deposit(String accountType, double depositAmount) {
 		
 		String account = accountType.toLowerCase();
@@ -67,6 +73,7 @@ public class BankAccount {
 	}
 	
 //	Method: Withdraw money from one balance. Do not allow them to withdraw money if there are insufficient funds.
+	
 	public void withdraw(String accountType, double withdrawlAmount) {
 		String account = accountType.toLowerCase();
 		
@@ -94,5 +101,6 @@ public class BankAccount {
 		}
 		
 	}
+	
 
 }
