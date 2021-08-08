@@ -9,9 +9,9 @@ public class BankAccount {
 //	Attribute: (double) savings balance.
 	private double savingsBalance;
 //	Class Member: (static) that has the number of accounts created thus far.
-	private static int numberOfAccounts = 0;
+	public static int numberOfAccounts = 0;
 //	Class Member: (static) that tracks the total amount of money stored in every account created.
-	private static int cashTotal = 0;
+	public static int cashTotal = 0;
 
 //	CONSTRUCTOR METHODS
 	
@@ -24,7 +24,6 @@ public class BankAccount {
 	}
 	
 	public BankAccount(double checkingBalance, double savingsBalance) {
-
 		this.checkingBalance = checkingBalance;
 		this.savingsBalance = savingsBalance;
 //	Increment the account count.
@@ -35,11 +34,36 @@ public class BankAccount {
 //	Users should not be able to set any of the attributes from the class.
 
 //	Getter Method: User's checking account balance.
+	public double getCheckingBalance() {
+		return this.checkingBalance;
+	}
 //	Getter Method: User's saving account balance.
+	public double getSavingsBalance() {
+		return this.savingsBalance;
+	}
 //	Getter Method: User's total money from the checking and saving.
+	public double getTotalBalance() {
+		return this.checkingBalance + this.savingsBalance;
+	}
+	
 	
 //	OTHER METHODS
 //	Method: Deposit money into either the checking or saving, be sure to add to total amount stored.
+	public void deposit(String accountType, double depositAmount) {
+		
+		if(accountType.equals("savings")) {
+			this.savingsBalance += depositAmount;
+			
+			cashTotal += depositAmount;	
+			
+		}else if(accountType.equals("checking")) {
+			this.checkingBalance += depositAmount;
+			
+			cashTotal += depositAmount;	
+		}
+	}
+	
+	
 //	Method: Withdraw money from one balance. Do not allow them to withdraw money if there are insufficient funds.
 
 }
