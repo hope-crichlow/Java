@@ -19,7 +19,6 @@ public class BankAccountTest {
 //		System.out.println("Savings Balance: $" + b.getSavingsBalance());
 		
 		System.out.println("----- Total Balance Test -----");
-		
 		System.out.println("Total Balance: $" + b.getTotalBalance());
 		
 		
