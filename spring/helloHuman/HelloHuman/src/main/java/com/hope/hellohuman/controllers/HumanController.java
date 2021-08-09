@@ -12,14 +12,13 @@ public class HumanController {
 	@RequestMapping("/")
 
 	public String index() { 
-		
-		return "Hello Human!" + '\n' + "Welcome to SpringBoot!";
+		return "Hello Human!" + "<br><br><br>" + "Welcome to SpringBoot!";
 	}
 
 	@RequestMapping("/{name}")
 	public String viewName(@PathVariable("name") String name) {
 		System.out.println(name);
-		return "Hello " + name + " !" + '\n' + "Welcome to SpringBoot!" ;
+		return "Hello " + name + " !" +"<br><br><br>" + "Welcome to SpringBoot!" ;
 	}
 
 }
