@@ -9,6 +9,6 @@ public interface Ringable {
 	}
 //unlock(): This method returns a String.
 	default String unlock() {
-		return "Phone has been unlocked";
+		return "Phone unlocked!";
 	}
 }
