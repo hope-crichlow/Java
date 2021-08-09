@@ -2,29 +2,27 @@ package com.hope.phone;
 
 public class Galaxy extends Phone implements Ringable {
     
+	private String brand;
+
 	public Galaxy(String versionNumber, int batteryPercentage, String carrier, String ringTone) {
         super(versionNumber, batteryPercentage, carrier, ringTone);
+        
+         this.brand = "Galaxy";
     }
     
     @Override
     public String ring() {
-
-    	return "Galaxy " + this.getVersionNumber() + " says " + this.getRingTone();
+    	return this.brand + " " + this.getRing();
     }
     
     @Override
     public String unlock() {
-
     	return "Unlocking via finger print";
     }
     
     @Override
     public void displayInfo() {
-
-    	String brand = "Galaxy ";
-		String info = this.getVersionNumber() + " from " + this.getCarrier();
-		
-		System.out.println(brand + info);
+		System.out.println(this.brand + " " + this.getInfo());
     }
 }
 

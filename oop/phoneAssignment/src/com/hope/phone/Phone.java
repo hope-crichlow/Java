@@ -1,12 +1,14 @@
 package com.hope.phone;
 
 public abstract class Phone {
+//	private String brand;
     private String versionNumber;
     private int batteryPercentage;
     private String carrier;
     private String ringTone;
     
     public Phone(String versionNumber, int batteryPercentage, String carrier, String ringTone){
+//    	this.brand = brand;
         this.versionNumber = versionNumber;
         this.batteryPercentage = batteryPercentage;
         this.carrier = carrier;
@@ -53,4 +55,13 @@ public abstract class Phone {
     	this.ringTone = newRingTone;
     }
     
+    
+    public String getInfo() {
+    	return this.getVersionNumber() + " from " + this.getCarrier();
+    }
+    
+    
+    public String getRing() {
+    	return this.getVersionNumber() + " says " + this.getRingTone();
+    }
 }

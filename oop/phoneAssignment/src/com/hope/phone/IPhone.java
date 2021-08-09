@@ -2,29 +2,27 @@ package com.hope.phone;
 
 public class IPhone extends Phone implements Ringable {
 	
+	private String brand;
+	
     public IPhone(String versionNumber, int batteryPercentage, String carrier, String ringTone) {
         super(versionNumber, batteryPercentage, carrier, ringTone);
+        
+        this.brand = "iPhone";
     }
     
     @Override
     public String ring() {
-
-    	return "iPhone " + this.getVersionNumber() + " says " + this.getRingTone();
+    	return this.brand + " " + this.getRing();
     }
     
     @Override
     public String unlock() {
-
     	return "Unlocking via facial recognition";
     }
     
     @Override
     public void displayInfo() {
- 
-    	String brand = "iPhone ";
-    	String info = this.getVersionNumber() + " from " + this.getCarrier();
-    	
-    	System.out.println(brand + info);
+    	System.out.println(brand + this.getInfo());
     }
 }
 
