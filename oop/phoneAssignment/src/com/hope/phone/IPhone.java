@@ -2,17 +2,16 @@ package com.hope.phone;
 
 public class IPhone extends Phone implements Ringable {
 	
-	private String brand;
+	String make = "iPhone";
 	
     public IPhone(String versionNumber, int batteryPercentage, String carrier, String ringTone) {
         super(versionNumber, batteryPercentage, carrier, ringTone);
-        
-        this.brand = "iPhone";
+ 
     }
     
     @Override
     public String ring() {
-    	return this.brand + " " + this.getRing();
+    	return make + " " + this.getRing();
     }
     
     @Override
@@ -22,7 +21,7 @@ public class IPhone extends Phone implements Ringable {
     
     @Override
     public void displayInfo() {
-    	System.out.println(brand + this.getInfo());
+    	System.out.println(make + " " + this.getInfo());
     }
 }
 
