@@ -11,6 +11,5 @@ public class HelloHumanApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HelloHumanApplication.class, args);
 	}
-	
 
 }
