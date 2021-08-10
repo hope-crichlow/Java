@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class SurveyController {
@@ -46,13 +47,17 @@ public class SurveyController {
 		@RequestParam(value="name") String name, 
 		@RequestParam(value="city") String city, 
 		@RequestParam(value="language") String language, 
-		@RequestParam(value="comment") String comment) {
+		@RequestParam(value="comment") String comment,
+		RedirectAttributes redirectAttributes) {
 		// ... process information and save it to the session
-		
+		redirectAttributes.addFlashAttribute("name",name);
+		redirectAttributes.addFlashAttribute("city",city);
+		redirectAttributes.addFlashAttribute("language",language);
+		redirectAttributes.addFlashAttribute("comment",name);
 		
 //		name = session.setAttribute("name", name); 
 			  	System.out.println(language);
-		return "redirect:/result.jsp";
+		return "redirect:/result";
 	}
 	
 	
