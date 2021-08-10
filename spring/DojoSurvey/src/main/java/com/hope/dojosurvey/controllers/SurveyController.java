@@ -2,48 +2,58 @@ package com.hope.dojosurvey.controllers;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SurveyController {
 	
 	@RequestMapping("/")
-	public String index(Model model) {
-		
-		String testing = "Sunshine";
-		model.addAttribute("test", testing);
+	public String index(Model model, HttpSession session) {
 		
 //		Location
-		ArrayList<String> dojos = new ArrayList<String>();
-		dojos.add("Vannes");
-		dojos.add("Nantes");
-		dojos.add("Plumelec");
+		ArrayList<String> cities = new ArrayList<String>();
+		cities.add("Vannes");
+		cities.add("Nantes");
+		cities.add("Plumelec");
 		
-		model.addAttribute("dojosFromMyController", dojos);
-		
-		
-//		String location1 = "Vannes";
-//		String location2 = "Nantes";
-//		String location3 = "Plumelec";
-		
-//		model.addAttribute("local1", location1);
-//		model.addAttribute("local2", location2);
-//		model.addAttribute("local3", location3);
-//		
+		model.addAttribute("citiesFromMyController", cities);
+			
 //		Language
-		String language1 = "Python";
-		String language2 = "Java";
-		String language3 = "Swift";
+		ArrayList<String> langs = new ArrayList<String>();
+		langs.add("Python");
+		langs.add("Swift");
+		langs.add("Java");
 		
-		
-		model.addAttribute("lang1", language1);
-		model.addAttribute("lang2", language2);
-		model.addAttribute("lang3", language3);
-		
-		
+		model.addAttribute("langsFromMyController", langs);
+
 		return "index.jsp";
 	}
+	
+	
+	@RequestMapping("/result")
+	public String result(Model model, HttpSession session) {
+		return "result.jsp";
+	}
+	
+	@RequestMapping(value="/process", method=RequestMethod.POST)
+	public String process(
+		@RequestParam(value="name") String name, 
+		@RequestParam(value="city") String city, 
+		@RequestParam(value="language") String language, 
+		@RequestParam(value="comment") String comment) {
+		// ... process information and save it to the session
+		
+		
+//		name = session.setAttribute("name", name); 
+			  	System.out.println(language);
+		return "redirect:/result.jsp";
+	}
+	
 	
 }

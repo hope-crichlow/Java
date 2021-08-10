@@ -41,17 +41,14 @@
 				</div>
 				
 				<div class="mb-3">
-					<label for="location">Your Location</label>
+					<label for="city">Dojo Location</label>
 					
-					<select name="location" id="location">
-					
-						<c:forEach var="city" items="${dojosFromMyController}">
-							<option value="${city}"><c:out value="${city}"/></option>
+					<select name="city" id="city">
+						<c:forEach var="city" items="${citiesFromMyController}">
+							<option value="${city}">
+								<c:out value="${city}"/>
+							</option>
 						</c:forEach>
-					
-						
-<%-- 						<option value="local2"><c:out value="${local2}"/></option>
-						<option value="local3"><c:out value="${local3}"/></option> --%>
 					</select>
 				</div>
 				
@@ -59,19 +56,24 @@
 					<label for="language">Favorite Language</label>
 					
 					<select name="language" id="language">
-						<option value="lang1"><c:out value="${lang1}"/></option>
-						<option value="lang2"><c:out value="${lang2}"/></option>
-						<option value="lang3"><c:out value="${lang3}"/></option>
+						<c:forEach var="language" items="${langsFromMyController}">
+							<option value="${language}">
+								<c:out value="${language}"/>
+							</option>
+						</c:forEach>
 					</select>
 				</div>
 				
 				<div class="mb-3"></div>
+				
 				<div class="comment">
 					<label for="comment">Comment (optional)</label>
-					<br />
+					<br/>
 					<textarea name="comment" id="comment" cols="50" rows="5"></textarea>
 				</div>
-				<input type="submit" value="submit" />
+				
+				<input type="submit" value="Submit" />
+				
 			</form>
 		</div>
 	</div>
