@@ -44,9 +44,14 @@
 					<label for="location">Your Location</label>
 					
 					<select name="location" id="location">
-						<option value="local1"><c:out value="${local1}"/></option>
-						<option value="local2"><c:out value="${local2}"/></option>
-						<option value="local3"><c:out value="${local3}"/></option>
+					
+						<c:forEach var="city" items="${dojosFromMyController}">
+							<option value="${city}"><c:out value="${city}"/></option>
+						</c:forEach>
+					
+						
+<%-- 						<option value="local2"><c:out value="${local2}"/></option>
+						<option value="local3"><c:out value="${local3}"/></option> --%>
 					</select>
 				</div>
 				

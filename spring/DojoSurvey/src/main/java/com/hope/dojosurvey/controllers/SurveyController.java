@@ -1,5 +1,7 @@
 package com.hope.dojosurvey.controllers;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +16,22 @@ public class SurveyController {
 		model.addAttribute("test", testing);
 		
 //		Location
-		String location1 = "Vannes";
-		String location2 = "Nantes";
-		String location3 = "Plumelec";
+		ArrayList<String> dojos = new ArrayList<String>();
+		dojos.add("Vannes");
+		dojos.add("Nantes");
+		dojos.add("Plumelec");
 		
-		model.addAttribute("local1", location1);
-		model.addAttribute("local2", location2);
-		model.addAttribute("local3", location3);
+		model.addAttribute("dojosFromMyController", dojos);
 		
+		
+//		String location1 = "Vannes";
+//		String location2 = "Nantes";
+//		String location3 = "Plumelec";
+		
+//		model.addAttribute("local1", location1);
+//		model.addAttribute("local2", location2);
+//		model.addAttribute("local3", location3);
+//		
 //		Language
 		String language1 = "Python";
 		String language2 = "Java";
