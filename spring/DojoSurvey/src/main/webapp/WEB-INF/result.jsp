@@ -20,16 +20,51 @@
 </head>
 
 <body>
-	<div class="container">
-		<h1>Submitted Info</h1>
-		<div>
-			<h2>Name: ${name}</h2>
-			<h2>Dojo Location: ${city}</h2>
-			<h2>Favorite Language: ${language}</h2>
-			<h2>Comment: ${comment}</h2>
-			
-			<a href="/" class="btn">Home</a>
+	<div class="container gy-5">
+		<div class="row p-3 ">
+			<h4><u>Submitted Info</u></h4>
 		</div>
+		<div class="border row p-3 ">
+
+			<div class="row mb">
+				<label class="col-sm-5 col-form-label" for="name">Name:</label>
+				
+				<div class="col-md">
+					<p>${name}</p>
+				</div>
+				
+			</div>
+			
+			<div class="row mb">
+				<label class="col-sm-5 col-form-label" for="name">Dojo Location:</label>
+				
+				<div class="col-md">
+					<p>${city}</p>
+				</div>
+				
+			</div>
+			
+			<div class="row mb">
+				<label class="col-sm-5 col-form-label" for="name">Favorite Language:</label>
+				
+				<div class="col-md">
+					<p>${language}</p>
+				</div>
+				
+			</div>
+			
+			<div class="row mb">
+				<label class="col-sm-5 col-form-label" for="name">Comment:</label>
+				
+				<div class="col-md">
+					<p>${comment}</p>
+				</div>
+				
+			</div>
+			
+			
+		</div>
+		<a href="/" class="btn">Home</a>
 	</div>
 </body>
 </html>

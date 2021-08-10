@@ -27,51 +27,56 @@
 
 <body>
 	<div class="container">
-	
-		<h1>Hello, <c:out value="${test}"/> !</h1>
+		<h1>Dojo Survey</h1> 
 		
-		<div class="container d-flex justify-content-center mx-auto">
+		<div class="container  d-flex justify-content-center mx-auto gy-5">
 			
-			<form action="/process" method="post">
+			<form action="/process" method="post" class="p-3 border">
 				
-				<div class="mb-3">
-					<label class="form-label" for="name">Your Name</label>
+				<div class="row mb-4">
+					<label class="col-sm-5 col-form-label" for="name">Your Name</label>
 					
-					<input type="text" name="name" />
+					<div class="col-md">
+						<input class="form-control" type="text" name="name" />
+					</div>
 				</div>
 				
-				<div class="mb-3">
-					<label for="city">Dojo Location</label>
+				<div class="row mb-3">
+					<label class="col-sm-5 col-form-label" for="city">Dojo Location</label>
 					
-					<select name="city" id="city">
-						<c:forEach var="city" items="${citiesFromMyController}">
-							<option value="${city}">
-								<c:out value="${city}"/>
-							</option>
-						</c:forEach>
-					</select>
+					<div class="col-md">
+						<select class="form-control" name="city" id="city">
+							<c:forEach var="city" items="${citiesFromMyController}">
+								<option value="${city}">
+									<c:out value="${city}"/>
+								</option>
+							</c:forEach>
+						</select>
+					</div>
 				</div>
 				
-				<div class="mb-3">
-					<label for="language">Favorite Language</label>
+				<div class="row mb-3">
+					<label class="col-sm-5 col-form-label" for="language">Favorite Language</label>
 					
-					<select name="language" id="language">
-						<c:forEach var="language" items="${langsFromMyController}">
-							<option value="${language}">
-								<c:out value="${language}"/>
-							</option>
-						</c:forEach>
-					</select>
+					<div class="col-md">
+						<select class="form-control" name="language" id="language">
+							<c:forEach var="language" items="${langsFromMyController}">
+								<option value="${language}">
+									<c:out value="${language}"/>
+								</option>
+							</c:forEach>
+						</select>
+					</div>
 				</div>
 				
-				<div class="mb-3"></div>
+				<div class="row mb-3">
 				
-				<div class="comment">
-					<label for="comment">Comment (optional)</label>
-					<br/>
-					<textarea name="comment" id="comment" cols="50" rows="5"></textarea>
+					<div class="comment">
+						<label class="col-sm-5 col-form-label" for="comment">Comment (optional)</label>
+						<br/>
+						<textarea class="form-control" name="comment" id="comment" cols="50" rows="5"></textarea>
+					</div>
 				</div>
-				
 				<input type="submit" value="Submit" />
 				
 			</form>

@@ -53,7 +53,7 @@ public class SurveyController {
 		redirectAttributes.addFlashAttribute("name",name);
 		redirectAttributes.addFlashAttribute("city",city);
 		redirectAttributes.addFlashAttribute("language",language);
-		redirectAttributes.addFlashAttribute("comment",name);
+		redirectAttributes.addFlashAttribute("comment",comment);
 		
 //		name = session.setAttribute("name", name); 
 			  	System.out.println(language);
