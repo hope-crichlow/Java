@@ -46,6 +46,28 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- webjars locator dependency enables auto-detection of the version, so your .jsp 
+        file links are version-agnostic in case you update the versions here in your pom later -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>webjars-locator</artifactId>
+		    <version>0.30</version>
+		</dependency>
+    
+		<!-- BOOTSTRAP DEPENDENCIES -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>5.0.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>3.6.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
