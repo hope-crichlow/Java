@@ -38,7 +38,7 @@ public class SurveyController {
 	
 	
 	@RequestMapping("/result")
-	public String result(Model model, HttpSession session) {
+	public String result() {
 		return "result.jsp";
 	}
 	
