@@ -3,6 +3,7 @@ package com.hope.mvc.controllers;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hope.mvc.models.Book;
@@ -23,5 +24,13 @@ public class MainController {
 		return mainServ.allBooks();
 	}
 	
+	@GetMapping("/api/books/{id}")
+		public Book oneBook(
+				@PathVariable("id") Long book_id
+		) {
+			return mainServ.findBook(book_id);
+		}
+		
+
 }
 
