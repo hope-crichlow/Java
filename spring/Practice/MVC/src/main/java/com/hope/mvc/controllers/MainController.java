@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hope.mvc.models.Book;
@@ -31,6 +33,18 @@ public class MainController {
 			return mainServ.findBook(book_id);
 		}
 		
-
+	@PostMapping("api/books/new")
+		public Book createBook(
+				@RequestParam("title") String title,
+				@RequestParam("description") String description,
+				@RequestParam("language") String language,
+				@RequestParam("numberOfPages") Integer numberOfPages
+		) {
+		// Take the form info from user, create a new object	
+		Book newBook = new  Book(title, description, language, numberOfPages);
+		
+		// Pass the object to the service for creation
+		return mainServ.createBook(newBook);
+	}
 }
 

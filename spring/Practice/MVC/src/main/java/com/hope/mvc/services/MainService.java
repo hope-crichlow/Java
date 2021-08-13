@@ -26,7 +26,7 @@ public class MainService {
     }
     
     // Creates a book
-    public Book createBook(Book b) {
+    public Book createBook(Book b) { // expecting a book object
         return bookRepository.save(b);
     }
     
