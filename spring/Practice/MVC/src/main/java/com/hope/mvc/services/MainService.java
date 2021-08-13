@@ -52,5 +52,10 @@ public class MainService {
 		 
 	}
 
+	public void deleteBook(Long book_id) {
+		bookRepository.deleteById(book_id);
+		
+	}
+
 
 }

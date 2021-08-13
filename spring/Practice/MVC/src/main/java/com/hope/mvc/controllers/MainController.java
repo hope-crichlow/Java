@@ -2,7 +2,7 @@ package com.hope.mvc.controllers;
 
 import java.util.List;
 
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,9 +23,9 @@ public class MainController {
 	}
 	
 	
-	@GetMapping("/api/books") // Returning raw data
+	@GetMapping("/api/books") // Returns raw data
 	public List<Book> allBooks() {
-		return mainServ.allBooks();
+		return mainServ.allBooks(); // Raw data
 	}
 	
 	@GetMapping("/api/books/{id}")
@@ -59,6 +59,14 @@ public class MainController {
 	) {
 			
 		return mainServ.updateBook(book_id, title, description, language, numberOfPages);
+	}
+	
+	
+	@DeleteMapping("/api/books/{id}")
+	public void deleteBook(
+			@PathVariable("id") Long book_id
+	) {
+		mainServ.deleteBook(book_id);
 	}
 	
 }

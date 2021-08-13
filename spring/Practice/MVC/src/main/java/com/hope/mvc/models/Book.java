@@ -104,10 +104,14 @@ public class Book {
 	}
 	
     // OTHER METHODS
+	
+		// Updates createdAt
     @PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
     }
+    
+    	// Updates UpdatedAt
     @PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();
