@@ -35,6 +35,22 @@ public class MainService {
     	return bookRepository.findById(id).orElse(null);
 
     }
+    
+    // Updates a book
+	public Book updateBook(Long book_id, String title, String description, String language, Integer numberOfPages) {
+		// Find the book
+		Book editbook = this.findBook(book_id);
+		
+		// Update the book object with new info
+		editbook.setTitle(title);
+		editbook.setDescription(description);
+		editbook.setLanguage(language);
+		editbook.setNumberOfPages(numberOfPages);
+		
+		// Save the updated book object to the DB
+		return this.createBook(editbook); // Option 2: return bookRepository.save(editbook);
+		 
+	}
 
 
 }
