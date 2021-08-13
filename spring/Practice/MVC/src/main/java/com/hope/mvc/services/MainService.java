@@ -17,8 +17,8 @@ public class MainService {
         this.bookRepository = bookRepository;
     }
     
-    // Methods that call upon CRUD functionality that the repository is providing
     
+    // Methods that call upon CRUD functionality that the repository is providing
    
     // Returns all the books
     public List<Book> allBooks() {
@@ -51,7 +51,7 @@ public class MainService {
 		return this.createBook(editbook); // Option 2: return bookRepository.save(editbook);
 		 
 	}
-
+	// Deletes book
 	public void deleteBook(Long book_id) {
 		bookRepository.deleteById(book_id);
 		
