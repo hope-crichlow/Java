@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -25,17 +25,17 @@ public class Language {
     private Long id;
     
     	// Required, between 3 and 20 characters
-    @NotEmpty()
+    @NotNull()
     @Size(min=3, max=20)
     private String name;
     
     	// Required, between 3 and 20 characters
-    @NotEmpty()
+    @NotNull()
     @Size(min=3, max=20)
     private String creator;
     
     	// Required
-    @NotEmpty()
+    @NotNull()
     private String version; 
     
     @Column(updatable=false)
