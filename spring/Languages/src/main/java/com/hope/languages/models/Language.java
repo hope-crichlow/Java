@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -35,7 +36,7 @@ public class Language {
     private String creator;
     
     	// Required
-    @NotNull()
+    @NotBlank() // renders an error message when w/o @Size while @NotNull does not
     private String version; 
     
     @Column(updatable=false)

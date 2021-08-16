@@ -33,10 +33,12 @@
 				<div class="d-flex mt-3 justify-content-between">
 			
 					<form:label path="name">
-						<p class="w-30">Name</p>
+						<p class="w-30">Name </p>
 					</form:label>
 					
+					<form:errors path="name" class="text-danger"/>
 					<form:input class="w-50" path="name"/>
+					
 				</div>
 				
 				<div class="d-flex mt-3 justify-content-between">
@@ -45,6 +47,7 @@
 						<p class="w-30">Creator</p>
 					</form:label>
 					
+					<form:errors path="creator" class="text-danger"/>
 					<form:input class="w-50" path="creator"/>
 				</div>
 				
@@ -54,6 +57,7 @@
 						<p class="w-30">Version</p>
 					</form:label>
 					
+					<form:errors path="version" class="text-danger"/>
 					<form:input class="w-50" path="version"/>
 				</div>
 				
