@@ -11,12 +11,6 @@ import com.hope.languages.repositories.LanguageRepository;
 @Service
 public class LanguageService {
 	
-//	private final LanguageRepository langRepo;
-//	
-//	public LanguageService(LanguageRepository langRepo) {
-//		this.langRepo = langRepo;
-//	}
-	
 	@Autowired
 	private LanguageRepository langRepo;
 	

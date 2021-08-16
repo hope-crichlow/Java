@@ -27,8 +27,41 @@
 
 <body>
 	<div class="container">
-		<h1>Hello Sunshine</h1>
-	
+		<h1>Dashboard</h1>
+		<div class="m-5 p-5">
+			<form:form action="/languages/new" method="POST" modelAttribute="langObj">
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="name">
+						<p class="w-30">Name</p>
+					</form:label>
+					
+					<form:input class="w-50" path="name"/>
+				</div>
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="creator">
+						<p class="w-30">Creator</p>
+					</form:label>
+					
+					<form:input class="w-50" path="creator"/>
+				</div>
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="version">
+						<p class="w-30">Version</p>
+					</form:label>
+					
+					<form:input class="w-50" path="version"/>
+				</div>
+				
+				<div class="d-flex align-items-end flex-column mt-3">
+					<button class="btn btn-primary px-5" type="submit">Submit</button>
+				</div>
+			</form:form>
+		</div>
 		
 	</div>
 </body>
