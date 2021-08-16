@@ -28,6 +28,38 @@
 <body>
 	<div class="container">
 		<h1>Dashboard</h1>
+		
+		<div class="m-5">
+		
+			<table class="table table-striped">
+			  
+			  <thead>
+			    <tr>
+			      <th scope="col">Name</th>
+			      <th scope="col">Creator</th>
+			      <th scope="col">Version</th>
+			      <th scope="col">Action</th>
+			    </tr>
+			  </thead>
+			  
+			  <tbody>
+				<c:forEach items="${langs}" var="eachLang"  varStatus="loop">
+				   <tr>
+				   		<td><a href="/languages/${eachLang.id}">${eachLang.name}</a></td>
+				   		<td>${eachLang.creator}</td>
+				   		<td>${eachLang.version}</td>
+				   		<td>
+							<a href="/languages/delete/${eachLang.id}">delete</a>	| 
+							<a href="/languages/${eachLang.id}/edit">edit</a>	   		
+				   		</td>
+				   </tr>
+		  		</c:forEach>
+			  </tbody>
+			  
+			</table>
+			
+		</div>
+		
 		<div class="m-5 p-5">
 			<form:form action="/languages/new" method="POST" modelAttribute="langObj">
 				<div class="d-flex mt-3 justify-content-between">
