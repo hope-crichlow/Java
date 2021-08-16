@@ -39,10 +39,19 @@ public class MainController {
 	
 	@PostMapping("/languages/new")
 	public String create(
-			@Valid @ModelAttribute("langObj") Language filledLang, BindingResult results
+			@Valid @ModelAttribute("langObj") Language filledLang, 
+			BindingResult results, 
+			Model model
 	) {
 		// VALIDATIONS FAIL, RERENDER THE JSP
 		if(results.hasErrors()) {
+			
+			// GRAB ALL LANGUAGES FROM DB
+			List<Language> allLangs = langServ.allLangs();
+			
+			// PASS ALL LANGUAGES TO THE JSP
+			model.addAttribute("langs", allLangs);
+			
 			return "index.jsp";
 		}
 		// VALIDATIONS PASS, CREATE NEW LANGUAGE
