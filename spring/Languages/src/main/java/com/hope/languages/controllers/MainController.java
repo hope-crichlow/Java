@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.hope.languages.models.Language;
 import com.hope.languages.services.LanguageService;
@@ -21,7 +23,7 @@ public class MainController {
 	@Autowired
 	private LanguageService langServ;
 	
-	// - - - - - - - - - - CREATE - - - - - - - - - - //
+	// - - - - - - - - - - - - - - - - CREATE - - - - - - - - - - - - - - - - //
 	@GetMapping("/")
 	public String index(
 			@ModelAttribute("langObj")Language emptyLang,
@@ -61,8 +63,44 @@ public class MainController {
 		}
 	}
 	
-	// - - - - - - - - - - CREATE - - - - - - - - - - //
+	// - - - - - - - - - - - - - - - - CREATE - - - - - - - - - - - - - - - - //
 	
+	
+	
+	// - - - - - - - - - - - - - - - - UPDATE - - - - - - - - - - - - - - - - //
+	
+	@GetMapping("/languages/edit/{id}")
+	 public String edit(
+			 @PathVariable("id") Long lang_id,
+			 Model model
+	) {
+		 // GRAB ONE LANGUAGE FROM DB
+		 Language oneLang = langServ.findOneLang(lang_id);
+		
+		 // PASS LANGUAGE TO THE JSP
+		 model.addAttribute("langObj", oneLang);
+	
+		 return "edit.jsp";
+	 }
+	 			
+	 
+	@PutMapping("/languages/{id}/edit")
+	public String update(
+			 @Valid @ModelAttribute("langObj") Language filledLang, 
+			 BindingResult results
+	) {
+		// VALIDATIONS FAIL, RERENDER THE JSP
+		if(results.hasErrors()) {
+			return "edit.jsp";
+		}
+		// VALIDATIONS PASS, UPDATE LANGUAGE
+		else {
+			langServ.saveLang(filledLang);
+			return "redirect:/";
+		}
+	 }
+	
+	// - - - - - - - - - - - - - - - - UPDATE - - - - - - - - - - - - - - - - //
 	
 }
    

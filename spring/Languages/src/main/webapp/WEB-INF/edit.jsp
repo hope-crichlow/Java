@@ -15,10 +15,7 @@
 	
 	<!-- YOUR own local CSS -->
 	<link rel="stylesheet" href="/css/main.css"/>
-	
-	<!-- For any Bootstrap that uses JS or jQuery-->
-	<!-- <script src="/webjars/jquery/jquery.min.js"></script> -->
-	<!-- <script src="/webjars/bootstrap/js/bootstrap.min.js"></script> -->
+
 	
 	<meta charset="UTF-8">
 	
@@ -27,7 +24,48 @@
 
 <body>
 	<div class="container">
-		<h1>Hello Sunshine</h1>
+		<h1>Edit Language</h1>
+		
+		<div class="m-5 p-5">
+			<form:form action="/languages/${langObj.id}/edit" method="POST" modelAttribute="langObj">
+				<input type="hidden" name="_method" value="put">
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="name">
+						<p class="w-30">Name </p>
+					</form:label>
+					
+					<form:errors path="name" class="text-danger"/>
+					<form:input class="w-50" path="name"/>
+					
+				</div>
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="creator">
+						<p class="w-30">Creator</p>
+					</form:label>
+					
+					<form:errors path="creator" class="text-danger"/>
+					<form:input class="w-50" path="creator"/>
+				</div>
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="version">
+						<p class="w-30">Version</p>
+					</form:label>
+					
+					<form:errors path="version" class="text-danger"/>
+					<form:input class="w-50" path="version"/>
+				</div>
+				
+				<div class="d-flex align-items-end flex-column mt-3">
+					<button class="btn btn-primary px-5" type="submit">Submit</button>
+				</div>
+			</form:form>
+		</div>
 	
 		
 	</div>

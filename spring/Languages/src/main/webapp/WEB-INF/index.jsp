@@ -50,7 +50,7 @@
 				   		<td>${eachLang.version}</td>
 				   		<td>
 							<a href="/languages/delete/${eachLang.id}">delete</a>	| 
-							<a href="/languages/${eachLang.id}/edit">edit</a>	   		
+							<a href="/languages/edit/${eachLang.id}">edit</a>	   		
 				   		</td>
 				   </tr>
 		  		</c:forEach>
