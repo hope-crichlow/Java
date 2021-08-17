@@ -27,7 +27,7 @@
 
 <body>
 	<div class="container">
-		<h1>Hello Sunshine</h1>
+		<h1>Show Language ${langObj.name}</h1>
 	
 		
 	</div>

@@ -24,6 +24,7 @@ public class MainController {
 	private LanguageService langServ;
 	
 	// - - - - - - - - - - - - - - - - CREATE - - - - - - - - - - - - - - - - //
+	
 	@GetMapping("/")
 	public String index(
 			@ModelAttribute("langObj")Language emptyLang,
@@ -101,6 +102,39 @@ public class MainController {
 	 }
 	
 	// - - - - - - - - - - - - - - - - UPDATE - - - - - - - - - - - - - - - - //
+	
+	
+	
+	// - - - - - - - - - - - - - - - - READ ONE - - - - - - - - - - - - - - - - //
+	
+	@GetMapping("/languages/{id}")
+	public String showLang(
+			@PathVariable("id")Long lang_id,
+			Model model
+	){
+		// GRAB ONE LANGUAGE FROM DB
+		Language oneLang = langServ.findOneLang(lang_id);
+		
+		// PASS LANGUAGE TO THE JSP
+		model.addAttribute("langObj", oneLang);
+		
+		return "show.jsp";
+	}
+	
+	// - - - - - - - - - - - - - - - - READ ONE - - - - - - - - - - - - - - - - //
+	
+	
+	// - - - - - - - - - - - - - - - - DELETE - - - - - - - - - - - - - - - - //
+	
+	@GetMapping("/languages/delete/{id}")
+	public String delete(@PathVariable("id") Long lang_id) {
+		
+		langServ.deleteLang(lang_id);
+		
+		return "redirect:/";
+	}
+	// - - - - - - - - - - - - - - - - DELETE - - - - - - - - - - - - - - - - //
+	
 	
 }
    

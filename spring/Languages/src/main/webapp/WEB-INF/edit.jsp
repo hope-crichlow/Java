@@ -19,14 +19,22 @@
 	
 	<meta charset="UTF-8">
 	
-	<title>Insert title here</title>
+	<title>Edit Language</title>
 </head>
 
 <body>
 	<div class="container">
 		<h1>Edit Language</h1>
 		
+			<div class="d-flex align-items-end flex-column">
+				<a href="/languages/delete/${language.id}">Delete</a>
+				<a href="/">Dashboard</a>
+			</div>
+			
+		
 		<div class="m-5 p-5">
+		
+			
 			<form:form action="/languages/${langObj.id}/edit" method="POST" modelAttribute="langObj">
 				<input type="hidden" name="_method" value="put">
 				
