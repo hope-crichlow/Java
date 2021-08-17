@@ -28,7 +28,7 @@
 		
 			<div class="d-flex align-items-end justify-content-end flex-column">
 				<div>
-					<a href="/languages/delete/${language.id}">Delete</a>
+					<a href="/languages/delete/${langObj.id}">Delete</a>
 				</div>
 				
 				<div>

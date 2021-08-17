@@ -22,7 +22,7 @@
 	
 	<meta charset="UTF-8">
 	
-	<title>Insert title here</title>
+	<title>${langObj.name}</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 		<div class="m-5">
 	
 			<div class="d-flex align-items-end flex-column">
-				<a href="/languages">Dashboard</a>
+				<a href="/">Dashboard</a>
 			</div>
 	
 			<p class="mt-3">${langObj.name}</p>
