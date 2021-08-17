@@ -26,10 +26,18 @@
 	<div class="container">
 		<h1>Edit Language</h1>
 		
-			<div class="d-flex align-items-end flex-column">
-				<a href="/languages/delete/${language.id}">Delete</a>
-				<a href="/">Dashboard</a>
+			<div class="d-flex align-items-end justify-content-end flex-column">
+				<div>
+					<a href="/languages/delete/${language.id}">Delete</a>
+				</div>
+				
+				<div>
+					<a href="/">Dashboard</a>
+				</div>
+				
+				
 			</div>
+			
 			
 		
 		<div class="m-5 p-5">

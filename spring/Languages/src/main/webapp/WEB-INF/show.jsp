@@ -27,9 +27,22 @@
 
 <body>
 	<div class="container">
-		<h1>Show Language ${langObj.name}</h1>
+		<h1>${langObj.name} Language</h1>
 	
-		
+		<div class="m-5">
+	
+			<div class="d-flex align-items-end flex-column">
+				<a href="/languages">Dashboard</a>
+			</div>
+	
+			<p class="mt-3">${langObj.name}</p>
+			<p class="mt-3">${langObj.creator}</p>
+			<p class="mt-3">${langObj.version}</p>
+			<a href="/languages/edit/${langObj.id}" class="mt-3">Edit</a>
+			<a href="languages/delete/${langObj.id}" class="mt-3">Delete</a>
+			
+		</div>
 	</div>
+	
 </body>
 </html>
