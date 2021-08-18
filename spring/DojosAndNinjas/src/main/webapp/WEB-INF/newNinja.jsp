@@ -34,7 +34,7 @@
 	
 		<div class="container  d-flex justify-content-center mx-auto gy-5">
 			
-			<form:form action="/process" method="post" class="p-3 border" modelAttribute="ninjaObj">
+			<form:form action="/ninja/new" method="post" class="p-3 border" modelAttribute="ninjaObj">
 			
 			<!-- Dojo Location -->
 				<div class="row mb-3">
@@ -44,7 +44,7 @@
 						<form:select class="form-control" path="dojo" id="dojo">
 						
 							<c:forEach var="dojo" items="${listOfDojos}">
-								<form:option value="${eachDojo}">
+								<form:option value="${dojo.id}">
 									<c:out value="${dojo.name} Location"/>
 								</form:option>
 							</c:forEach>

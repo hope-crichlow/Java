@@ -33,7 +33,7 @@ public class MainController {
 		
 		return "index.jsp";
 	}
-	// FORM CREATES NEW DOJO
+	// FORM CREATES A NEW DOJO
 	@PostMapping("/dojo/new")
 	public String createDojo(@ModelAttribute("dojoObj") Dojo filledDojo) {
 		mainServ.saveDojo(filledDojo);
@@ -58,6 +58,11 @@ public class MainController {
 		
 		return "newNinja.jsp";
 	}
-	
+	// FORM CREATES A NEW NINJA
+	@PostMapping("ninja/new")
+	public String createNinja(@ModelAttribute("ninjaObj") Ninja filledNinja) {
+		mainServ.saveNinja(filledNinja);
+		return "redirect:/";
+	}
 	
 }
