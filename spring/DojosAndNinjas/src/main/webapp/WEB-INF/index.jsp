@@ -32,7 +32,7 @@
 	<div class="container">
 		<h1>New Dojo</h1>
 	
-		<div class="m-5 p-5">
+		<%-- <div class="m-5 p-5">
 			<form:form action="/dojo/new" method="POST" modelAttribute="dojoObj">
 				
 				<div class="d-flex mt-3 justify-content-between">
@@ -52,7 +52,7 @@
 				</div>
 				
 			</form:form>
-		</div>
+		</div> --%>
 	</div>
 </body>
 </html>
