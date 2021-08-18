@@ -50,7 +50,11 @@ public class MainController {
 	@GetMapping("/ninjas/new")
 	public String newNinja(@ModelAttribute("ninjaObj") Ninja emptyNinja,
 							Model model) {
-		
+		// DISPLAY ALL DOJOS 
+			// Grab all Dojos from DB
+		List<Dojo> allDojos = mainServ.allDojos();
+			// Pass list of Dojos to jsp
+		model.addAttribute("listOfDojos", allDojos);
 		
 		return "newNinja.jsp";
 	}
