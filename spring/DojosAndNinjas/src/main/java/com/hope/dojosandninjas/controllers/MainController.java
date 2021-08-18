@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hope.dojosandninjas.models.Dojo;
@@ -28,7 +29,7 @@ public class MainController {
 		// DISPLAY ALL DOJOS 
 			// Grab all Dojos from DB
 		List<Dojo> allDojos = mainServ.allDojos();
-			// Pass list of Dojos to jsp
+			// Pass list of Dojos to JSP
 		model.addAttribute("listOfDojos", allDojos);
 		
 		return "index.jsp";
@@ -63,6 +64,26 @@ public class MainController {
 	public String createNinja(@ModelAttribute("ninjaObj") Ninja filledNinja) {
 		mainServ.saveNinja(filledNinja);
 		return "redirect:/";
+	}
+	
+	// DOJO PAGE - DISPLAY ALL NINJAS IN THE SPECIFIED DOJO
+	@GetMapping("/dojos/{id}")
+	public String viewDojo(@PathVariable("id") Long dojo_id,
+							Model model) {
+		// DISPLAY ONE DOJO
+			// Grab Dojo object from DB
+		Dojo dojo = mainServ.findOneDojo(dojo_id);
+			// pass Dojo object to JSP
+		model.addAttribute("dojo", dojo);
+		
+		// DIPLAY LIST OF NINJAS IN DOJO
+			// Grab list of ninjas from dojo object
+		List<Ninja> ninjasInDojo = dojo.getNinjas();
+			// pass list of ninjas to JSP
+		model.addAttribute("listOfNinjas", ninjasInDojo);
+		
+		
+		return "dojoPage.jsp";
 	}
 	
 }

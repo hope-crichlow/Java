@@ -25,12 +25,20 @@
 	
 	<meta charset="UTF-8">
 	
-	<title>Dojo Pagee</title>
+	<title>Dojo Page</title>
 </head>
 
 <body>
 	<div class="container">
 		<h1>${dojo.name} Location Ninjas</h1>
+		
+		<div class="d-flex align-items-end justify-content-end flex-column">
+				
+			<div>
+				<a href="/">Dashboard</a>
+			</div>
+				
+		</div>
 	
 		<div class="m-5">
 		

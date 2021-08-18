@@ -38,6 +38,8 @@ public class MainService {
 		return dojoRepo.findById(id).orElse(null);
 	}
 	
+	// FIND NINJAS IN ONE DOJO
+	
 	// DELETE ONE DOJO
 
 // - - - - - - - - - - - - - - - - DOJO CRUD - - - - - - - - - - - - - - - - //

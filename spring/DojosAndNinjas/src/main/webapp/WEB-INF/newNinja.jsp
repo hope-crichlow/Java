@@ -31,6 +31,7 @@
 <body>
 	<div class="container">
 		<h1>New Ninja</h1>
+		
 	
 		<div class="container  d-flex justify-content-center mx-auto gy-5">
 			
