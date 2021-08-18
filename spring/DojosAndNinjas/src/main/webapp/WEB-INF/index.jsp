@@ -53,6 +53,34 @@
 				
 			</form:form>
 		</div>
+		
+		<div class="m-5">
+		
+			<table class="table table-striped">
+			  
+				<thead>
+					<tr>
+						<th scope="col">Location</th>
+						<th scope="col">Action</th>
+						
+					</tr>
+				</thead>
+			  
+				<tbody>
+				<c:forEach items="${listOfDojos}" var="eachDojo"  varStatus="loop">
+					<tr>
+						<td>${eachDojo.name}</td>
+						<td>
+						<a href="/dojos/${eachDojo.id}">See Students</a>
+						</td>
+						
+					</tr>
+				</c:forEach>
+				</tbody>
+			  
+			</table>
+			
+		</div>
 	</div>
 </body>
 </html>
