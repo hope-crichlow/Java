@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hope.dojosandninjas.models.Dojo;
+import com.hope.dojosandninjas.models.Ninja;
 import com.hope.dojosandninjas.services.MainService;
 
 @Controller
@@ -19,6 +20,7 @@ public class MainController {
 	@Autowired
 	private MainService mainServ;
 	
+	// INDEX PAGE - MAKE A NEW DOJO, DISPLAY DOJOS
 	@GetMapping("/")
 	public String index(@ModelAttribute("dojoObj") Dojo emptyDojo,
 						Model model) {
@@ -31,19 +33,25 @@ public class MainController {
 		
 		return "index.jsp";
 	}
-
+	// FORM CREATES NEW DOJO
 	@PostMapping("/dojo/new")
 	public String createDojo(@ModelAttribute("dojoObj") Dojo filledDojo) {
 		mainServ.saveDojo(filledDojo);
 		return "redirect:/";
 	}
+	// URL GIVEN IN ASSIGNMENT REROUTES TO "/"
 	@GetMapping("/dojos/new")
 	public String newDojo() {
 		return "redirect:/";
 	}
 	
+	
+	// NEW NINJA PAGE - MAKE A NEW NINJA WITH REFERENCE TO DOJO SELECTED FROM THE PROVIDED LIST
 	@GetMapping("/ninjas/new")
-	public String newNinja() {
+	public String newNinja(@ModelAttribute("ninjaObj") Ninja emptyNinja,
+							Model model) {
+		
+		
 		return "newNinja.jsp";
 	}
 	

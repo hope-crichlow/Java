@@ -31,6 +31,14 @@
 <body>
 	<div class="container">
 		<h1>New Dojo</h1>
+		
+		<div class="d-flex align-items-end justify-content-end flex-column">
+				
+			<div>
+				<a href="/ninjas/new">New Ninja</a>
+			</div>
+				
+		</div>
 	
 		<div class="m-5 p-5">
 			<form:form action="/dojo/new" method="POST" modelAttribute="dojoObj">
