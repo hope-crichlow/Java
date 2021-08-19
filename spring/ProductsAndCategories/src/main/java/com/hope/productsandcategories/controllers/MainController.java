@@ -27,13 +27,21 @@ public class MainController {
 	public String newProd(
 			@ModelAttribute("prodObj") Product filledObj
 			) {
-		mainServ.save(filledObj);
+		mainServ.saveProd(filledObj);
 		return "redirect:/";
 	}
 	
 	@GetMapping("/categories/new")
 	public String newCat(
-			@ModelAttribute("catObj") Category emptyObj){
+			@ModelAttribute("catObj") Category emptyCat){
 		return "newCat.jsp";
+	}
+	
+	@PostMapping("/categories/new")
+	public String createCat(
+			@ModelAttribute("catObj") Category filledCat) {
+		
+		mainServ.saveCat(filledCat);
+		return "redirect:/";
 	}
 }

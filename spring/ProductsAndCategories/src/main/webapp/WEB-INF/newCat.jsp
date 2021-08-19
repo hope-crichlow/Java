@@ -25,7 +25,7 @@
 	
 	<meta charset="UTF-8">
 	
-	<title>Insert title here</title>
+	<title>New Category</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 		<h1>New Category</h1>
 	
 		<div class="m-5 p-5">
-			<form:form action="/products/new" method="POST" modelAttribute="catObj">
+			<form:form action="/categories/new" method="POST" modelAttribute="catObj">
 				
 				<div class="d-flex mt-3 justify-content-between">
 			

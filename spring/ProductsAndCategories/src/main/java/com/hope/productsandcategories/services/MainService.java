@@ -25,7 +25,7 @@ public class MainService {
 		return prodRepo.findAll();
 	}
 	
-	public Product save(Product p) {
+	public Product saveProd(Product p) {
 		return prodRepo.save(p);
 	}
 // ------------------- CRUD PRODUCTS ------------------- //
@@ -35,7 +35,7 @@ public class MainService {
 		return catRepo.findAll();
 	}
 	
-	public Category save(Category c) {
+	public Category saveCat(Category c) {
 		return catRepo.save(c);
 	}
 // ------------------- CRUD CATEGORIES ------------------- //
