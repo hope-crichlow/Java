@@ -53,6 +53,10 @@
 					</option>
 				</c:forEach>
 			</select>
+			
+			<div class="d-flex align-items-end flex-column mt-3">
+				<button class="btn btn-primary px-5" type="submit">Add Category</button>
+			</div>
 			</form>
 		</div>
 		

@@ -42,5 +42,9 @@ public class MainService {
 	public Category saveCat(Category c) {
 		return catRepo.save(c);
 	}
+	
+	public Category findCategory(Long cat_id) {
+		return catRepo.findById(cat_id).orElse(null);
+	}
 // ------------------- CRUD CATEGORIES ------------------- //
 }
