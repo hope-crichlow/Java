@@ -25,12 +25,12 @@
 	
 	<meta charset="UTF-8">
 	
-	<title>Insert title here</title>
+	<title>New Product</title>
 </head>
 
 <body>
 	<div class="container">
-		<h1>Hello Sunshine</h1>
+		<h1>New Product</h1>
 	
 		<div class="m-5 p-5">
 			<form:form action="/products/new" method="POST" modelAttribute="prodObj">
