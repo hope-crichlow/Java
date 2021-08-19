@@ -32,7 +32,49 @@
 	<div class="container">
 		<h1>Hello Sunshine</h1>
 	
-		
+		<div class="m-5 p-5">
+			<form:form action="/products/new" method="POST" modelAttribute="prodObj">
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="name">
+						<p class="w-30">Name: </p>
+					</form:label>
+					
+			<%-- 		<form:errors path="name" class="text-danger"/> --%>
+					<form:input class="w-50" path="name"/>
+					
+				</div>
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="description">
+						<p class="w-30">Description: </p>
+					</form:label>
+					
+				<%-- 	<form:errors path="description" class="text-danger"/> --%>
+					<form:input class="w-50" path="description"/>
+					
+				</div>
+				
+				<div class="d-flex mt-3 justify-content-between">
+			
+					<form:label path="price">
+						<p class="w-30">Price: </p>
+					</form:label>
+					
+				<%-- 	<form:errors path="price" class="text-danger"/> --%>
+					<form:input class="w-50" type="number" stop=".1" path="price"/>
+					
+				</div>
+				
+				
+				<div class="d-flex align-items-end flex-column mt-3">
+					<button class="btn btn-primary px-5" type="submit">Create</button>
+				</div>
+				
+			</form:form>
+		</div>
 	</div>
 </body>
 </html>
