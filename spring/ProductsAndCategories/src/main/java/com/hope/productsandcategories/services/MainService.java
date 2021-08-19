@@ -28,6 +28,10 @@ public class MainService {
 	public Product saveProd(Product p) {
 		return prodRepo.save(p);
 	}
+	
+	public Product findProduct(Long prod_id) {
+		return prodRepo.findById(prod_id).orElse(null);
+	}
 // ------------------- CRUD PRODUCTS ------------------- //
 
 // ------------------- CRUD CATEGORIES ------------------- //
