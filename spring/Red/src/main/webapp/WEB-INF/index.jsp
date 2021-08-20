@@ -61,7 +61,10 @@
 							<a href="/courses/${eachCourse.id}">${eachCourse.name}</a> </td>
 							<td>${eachCourse.instructor}</td>
 							<td>${eachCourse.capacity}</td>
-							<td><a href="">Add functionality</a> </td>
+							<td>
+								<a href="">Add functionality</a> 
+								<a href="/courses/${eachCourse.id}/edit">Edit</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

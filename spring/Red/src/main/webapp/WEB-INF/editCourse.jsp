@@ -25,14 +25,58 @@
 	
 	<meta charset="UTF-8">
 	
-	<title>Insert title here</title>
+	<title>Edit ${course.name}</title>
 </head>
 
 <body>
 	<div class="container">
-		<h1>Hello Sunshine</h1>
+		<h1>Edit ${courseObj.name}</h1>
 	
+		<div class="container  d-flex justify-content-center mx-auto gy-5">
+			
+			<form:form action="/courses/new" method="post" class="p-3 border" modelAttribute="courseObj">
+			
 		
+				
+			<!-- Name -->
+				<div class="row mb-4">
+					
+					<form:label class="col-sm-5 col-form-label" path="name">Name: </form:label>
+					<form:errors path="name" class="text-danger"/>
+					<div class="col-md">
+						<form:input class="form-control" type="text" path="name" />
+					</div>
+				</div>
+				
+			<!-- Instructor -->
+				<div class="row mb-4">
+					
+					<form:label class="col-sm-5 col-form-label" path="instructor">Instructor: </form:label>
+					<form:errors path="instructor" class="text-danger"/>
+					<div class="col-md">
+						<form:input class="form-control" type="text" path="instructor" />
+					</div>
+				</div>
+				
+			<!-- Capacity -->
+				<div class="row mb-4">
+					
+					<form:label class="col-sm-5 col-form-label" path="capacity">Capacity: </form:label>
+					<form:errors path="capacity" class="text-danger"/>
+					<div class="col-md">
+						<form:input class="form-control" type="text" path="capacity" />
+					</div>
+				</div>		
+				
+				
+				<div class="d-flex align-items-end flex-column mt-3">
+					<button class="btn btn-primary px-5" type="submit">Create</button>
+				</div>
+				
+			</form:form>
+		</div>
+		
+	
 	</div>
 </body>
 </html>
