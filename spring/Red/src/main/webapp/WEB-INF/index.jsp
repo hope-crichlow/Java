@@ -32,7 +32,7 @@
 	<div class="container">
 	
 		<div class="d-flex justify-content-around">
-            <h1>Hello, ${email}</h1>
+            <h1>Hello, ${currentUser.firstName}</h1>
         </div>
 		
 	

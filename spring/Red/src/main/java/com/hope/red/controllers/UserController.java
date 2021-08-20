@@ -64,7 +64,6 @@ public class UserController {
     	if(userServ.authenticateUser(email, password)) {
     		User loggedUser = userServ.findByEmail(email);
     		session.setAttribute("user_id", loggedUser.getId());
-    		session.setAttribute("email", loggedUser.getEmail());
     		return "redirect:/home";
     	}
         // Else, add error messages and return the login page
@@ -73,9 +72,18 @@ public class UserController {
     		return "redirect:/login";
     	}
     }
-    
+   
     @GetMapping("/home")
-    public String home() {
+    public String home(
+    		HttpSession session,
+    		Model model
+    ) {
+    	// USE ID STORED IN SESSION TO ACCESS USER OBJECT IN ORDER TO USE PROPERTIES THROUGHOUT APP
+    	Long currentUserId = (Long) session.getAttribute("user_id");
+    	User currentUser = userServ.findUserById(currentUserId);
+    		// Pass user object to JSP 
+    	model.addAttribute("currentUser", currentUser);
+    	
     	return "index.jsp";
     }
     

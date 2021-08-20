@@ -75,6 +75,9 @@
 			        </p>
 			        <input type="submit" class="btn btn-primary" value="Register"/>
 			    </form:form>
+			    <p>
+			    	Or click here to <a href="/login">login</a>
+			    </p>
 			</div>
 		</div>
 	</div>
