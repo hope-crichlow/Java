@@ -49,7 +49,7 @@
 					<tr>
 						<th scope="col">Courses</th>
 						<th scope="col">Instructor</th>
-						<th scope="col">SignUps</th>
+						<th scope="col">Capacity</th>
 						<th scope="col">Action</th>
 					</tr>
 				</thead>
@@ -61,7 +61,7 @@
 							<a href="/courses/${eachCourse.id}">${eachCourse.name}</a> </td>
 							<td>${eachCourse.instructor}</td>
 							<td>${eachCourse.capacity}</td>
-							<td>Add functionality</td>
+							<td><a href="">Add functionality</a> </td>
 						</tr>
 					</c:forEach>
 				</tbody>

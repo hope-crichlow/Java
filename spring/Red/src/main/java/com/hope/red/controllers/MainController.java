@@ -51,7 +51,8 @@ public class MainController {
     // REG FORM
     @PostMapping("/registration")
     public String registerUser(
-    		@Valid @ModelAttribute("userObj") User filledUser, BindingResult result, 
+    		@Valid @ModelAttribute("userObj") User filledUser, 
+    		BindingResult result, 
     		HttpSession session
     ) {
     	userValidator.validate(filledUser, result);
@@ -120,10 +121,17 @@ public class MainController {
     // NEW COURSE FORM
     @PostMapping("/courses/new")
     public String createCourse(
-    		@ModelAttribute("courseObj") Course filledCourse
+    		@Valid @ModelAttribute("courseObj") Course filledCourse,
+    		BindingResult result
     ) {
+    	if(result.hasErrors()) {
+    		return "newCourse.jsp";
+    	}
+        // Else, save the course in the database
+    	else {
     	courseServ.saveCourse(filledCourse);
     	return "redirect:/courses";
+    	}
     }
     
  // -------------------- LOGOUT FUNCTIONALITY ---------------------------//
