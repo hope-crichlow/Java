@@ -36,19 +36,41 @@
 		
 			<div class="w-50 border p-3">
 				
-				<p><form:errors path="userObj.*" class="text-danger"/></p>
+<%-- 				<p><form:errors path="userObj.*" class="text-danger"/></p> --%>
 			    
 			    <form:form method="POST" action="/registration" modelAttribute="userObj">
+			    
+				    <p>
+				
+						<form:label path="firstName">First Name:</form:label>
+						<form:errors path="firstName" class="text-danger"/>
+						
+						<form:input class="form-control" path="firstName"/>
+						
+					</p>
+					<p>
+						<form:label path="lastName">Last Name:</form:label>
+						<form:errors path="lastName" class="text-danger"/>
+						
+						<form:input class="form-control" path="lastName"/>
+						
+					
 			        <p>
 			            <form:label path="email">Email:</form:label>
+			            <form:errors path="email" class="text-danger"/>
+			            
 			            <form:input class="form-control" type="email" path="email"/>
 			        </p>
 			        <p>
 			            <form:label path="password">Password:</form:label>
+			            <form:errors path="password" class="text-danger"/>
+			            
 			            <form:password class="form-control" path="password"/>
 			        </p>
 			        <p>
 			            <form:label path="passwordConfirmation">Password Confirmation:</form:label>
+			            <form:errors path="passwordConfirmation" class="text-danger"/>
+			            
 			            <form:password class="form-control" path="passwordConfirmation"/>
 			        </p>
 			        <input type="submit" class="btn btn-primary" value="Register"/>

@@ -23,7 +23,12 @@ public class User {
     
     // MEMBER VARIABLES
     
-   
+    @NotEmpty(message = "Must have first name")
+    private String firstName;
+    
+    @NotEmpty(message = "Must have last name")
+    private String lastName;
+    
     @Email(message = "Must have valid email format")
     private String email;
     
@@ -40,8 +45,10 @@ public class User {
     public User() {
     	
     }
-    public User(String email, String password, String passwordConfirmation) {
+    public User(String firstName, String lastName, String email, String password, String passwordConfirmation) {
 		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 		this.passwordConfirmation = passwordConfirmation;
@@ -53,6 +60,18 @@ public class User {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public String getEmail() {
 		return email;
