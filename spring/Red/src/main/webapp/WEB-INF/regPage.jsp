@@ -42,19 +42,12 @@
 			    
 				    <p>
 				
-						<form:label path="firstName">First Name:</form:label>
-						<form:errors path="firstName" class="text-danger"/>
+						<form:label path="name">Name:</form:label>
+						<form:errors path="name" class="text-danger"/>
 						
-						<form:input class="form-control" path="firstName"/>
+						<form:input class="form-control" path="name"/>
 						
 					</p>
-					<p>
-						<form:label path="lastName">Last Name:</form:label>
-						<form:errors path="lastName" class="text-danger"/>
-						
-						<form:input class="form-control" path="lastName"/>
-						
-					
 			        <p>
 			            <form:label path="email">Email:</form:label>
 			            <form:errors path="email" class="text-danger"/>

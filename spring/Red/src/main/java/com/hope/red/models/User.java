@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
@@ -23,16 +24,15 @@ public class User {
     
     // MEMBER VARIABLES
     
-    @NotEmpty(message = "Must have first name")
-    private String firstName;
+    @NotEmpty(message = "Name must be present")
+    private String name;
     
-    @NotEmpty(message = "Must have last name")
-    private String lastName;
-    
+    @NotEmpty(message = "Email must be present")
     @Email(message = "Must have valid email format")
     private String email;
     
-    @NotEmpty(message = "Must have password")
+    @NotEmpty(message = "Password must be present")
+    @Size(min=8, max=100, message="Password must be between 8 and 100 characters")
     private String password;
     
     @Transient
@@ -45,10 +45,9 @@ public class User {
     public User() {
     	
     }
-    public User(String firstName, String lastName, String email, String password, String passwordConfirmation) {
+    public User(String name, String email, String password, String passwordConfirmation) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.passwordConfirmation = passwordConfirmation;
@@ -61,17 +60,11 @@ public class User {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getEmail() {
 		return email;
