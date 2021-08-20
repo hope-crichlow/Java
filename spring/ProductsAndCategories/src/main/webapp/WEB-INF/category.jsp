@@ -25,25 +25,23 @@
 	
 	<meta charset="UTF-8">
 	
-	<title>Product</title>
-	
+	<title>Category</title>
 </head>
 
 <body>
 	<div class="container">
-		<h1>${product.name}</h1>
-		
+		<h1>${category.name}</h1>
 		<div>
-			<h4>Categories:</h4>
+			<h4>Products:</h4>
 			
 			<ul>
-				<c:forEach var="category" items="${product.categories}">
-					<li><c:out value="${category.name}"/></li>
+				<c:forEach var="product" items="${category.products}">
+					<li><c:out value="${product.name}"/></li>
 				</c:forEach>
 			</ul>
 		</div> 
 		
-		<div>
+	<%-- 	<div>
 			<h3>Add Category</h3>
 			<form action="/products/${product.id}" method="POST">
 				<select name="category_id">
@@ -58,10 +56,7 @@
 				<button class="btn btn-primary px-5" type="submit">Add Category</button>
 			</div>
 			</form>
-		</div>
-		
-		
-	
+		</div> --%>
 		
 	</div>
 </body>

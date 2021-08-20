@@ -49,6 +49,20 @@ public class MainController {
 		mainServ.saveCat(filledCat);
 		return "redirect:/";
 	}
+// INDIVIDUAL PRODUCT PAGE - CREATING THE RELATIONSHIP
+		@GetMapping("/categories/{id}")
+		public String oneCategory(
+				@PathVariable("id") Long cat_id,
+				Model model) {
+			
+			
+			Category oneCategory = mainServ.findCategory(cat_id);
+			model.addAttribute("category",oneCategory);
+			model.addAttribute("products", mainServ.productsExcludingCategory(oneCategory));
+			
+			return "category.jsp";
+		}
+
 
 // INDIVIDUAL PRODUCT PAGE - CREATING THE RELATIONSHIP
 	@GetMapping("/products/{id}")
