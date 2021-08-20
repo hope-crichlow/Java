@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import com.hope.red.models.Course;
 import com.hope.red.models.User;
@@ -149,6 +151,21 @@ public class MainController {
     	return "editCourse.jsp";
     }
     // EDIT COURSE FORM
+    @PutMapping("/courses/{id}/edit")
+	public String updateCourse(
+			 @Valid @ModelAttribute("courseObj") Course filledCourse, 
+			 BindingResult results
+	) {
+		// VALIDATIONS FAIL, RERENDER THE JSP
+		if(results.hasErrors()) {
+			return "editCourse.jsp";
+		}
+		// VALIDATIONS PASS, UPDATE LANGUAGE
+		else {
+			courseServ.saveCourse(filledCourse);
+			return "redirect:/courses";
+		}
+	 }
     
  // -------------------- LOGOUT FUNCTIONALITY ---------------------------//
     @GetMapping("/logout")

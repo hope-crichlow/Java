@@ -34,8 +34,8 @@
 	
 		<div class="container  d-flex justify-content-center mx-auto gy-5">
 			
-			<form:form action="/courses/new" method="post" class="p-3 border" modelAttribute="courseObj">
-			
+			<form:form action="/courses/${courseObj.id}/edit" method="post" class="p-3 border" modelAttribute="courseObj">
+			<input type="hidden" name="_method" value="put">
 		
 				
 			<!-- Name -->
