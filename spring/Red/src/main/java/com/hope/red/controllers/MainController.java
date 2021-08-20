@@ -1,5 +1,7 @@
 package com.hope.red.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -97,6 +99,12 @@ public class MainController {
     	User currentUser = userServ.findUserById(currentUserId);
     		// Pass user object to JSP 
     	model.addAttribute("currentUser", currentUser);
+    	
+    	// DISPLAY ALL COURSES
+    		// Grab all Courses from DB
+    	List<Course> allCourses = courseServ.allCourses();
+    		// Pass list of Courses to JSP 
+    	model.addAttribute("listOfCourses", allCourses);
     	
     	return "index.jsp";
     }

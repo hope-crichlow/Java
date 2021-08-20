@@ -55,7 +55,7 @@
 				</thead>
 			  
 				<tbody>
-					<%-- <c:forEach items="${listOfCourses}" var="eachCourse"  varStatus="loop">
+					<c:forEach items="${listOfCourses}" var="eachCourse"  varStatus="loop">
 						<tr>
 							<td>
 							<a href="/courses/${eachCourse.id}">${eachCourse.name}</a> </td>
@@ -63,7 +63,7 @@
 							<td>${eachCourse.capacity}</td>
 							<td>Add functionality</td>
 						</tr>
-					</c:forEach> --%>
+					</c:forEach>
 				</tbody>
 			  
 			</table>
