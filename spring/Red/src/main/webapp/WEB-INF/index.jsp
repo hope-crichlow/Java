@@ -40,6 +40,35 @@
            
             <a href="/logout">Logout</a>
         </div>
+        
+        <div class="m-5">
+		
+			<table class="table table-striped">
+			  
+				<thead>
+					<tr>
+						<th scope="col">Courses</th>
+						<th scope="col">Instructor</th>
+						<th scope="col">SignUps</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+			  
+				<tbody>
+					<%-- <c:forEach items="${listOfCourses}" var="eachCourse"  varStatus="loop">
+						<tr>
+							<td>
+							<a href="/courses/${eachCourse.id}">${eachCourse.name}</a> </td>
+							<td>${eachCourse.instructor}</td>
+							<td>${eachCourse.capacity}</td>
+							<td>Add functionality</td>
+						</tr>
+					</c:forEach> --%>
+				</tbody>
+			  
+			</table>
+			
+		</div>
 	</div>
 </body>
 </html>

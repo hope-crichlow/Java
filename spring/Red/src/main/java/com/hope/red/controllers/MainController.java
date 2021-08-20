@@ -13,28 +13,40 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.hope.red.models.Course;
 import com.hope.red.models.User;
+import com.hope.red.services.CourseService;
 import com.hope.red.services.UserService;
 import com.hope.red.validator.UserValidator;
 
 @Controller
-public class UserController {
+public class MainController {
 	@Autowired
 	private UserService userServ;
 	
 	@Autowired
-	private UserValidator userValidator;
+	private CourseService courseServ;
 	
+	@Autowired
+	private UserValidator userValidator;
+	// -------------------- LOGIN & REGISTRATION PAGES ---------------------------//
+	
+	// REG PAGE
 	@GetMapping("/registration")
     public String registerForm(@ModelAttribute("userObj") User emptyUser) {
         return "regPage.jsp";
     }
+	// LOGIN PAGE
     @GetMapping("/login")
     public String login() {
         return "loginPage.jsp";
     }
-    
-    
+    // BASE ROUTE RENDERS LOGIN PAGE
+    @GetMapping("/")
+    public String base() {
+        return "loginPage.jsp";
+    }
+    // REG FORM
     @PostMapping("/registration")
     public String registerUser(
     		@Valid @ModelAttribute("userObj") User filledUser, BindingResult result, 
@@ -49,10 +61,10 @@ public class UserController {
     	else {
     		User newUser = userServ.registerUser(filledUser);
     		session.setAttribute("user_id", newUser.getId());
-    		return "redirect:/home";
+    		return "redirect:/courses";
     	}
     }
-    
+    // LOGIN FORM
     @PostMapping("/login")
     public String loginUser(
     		@RequestParam("email") String email, @RequestParam("password") String password, 
@@ -64,7 +76,7 @@ public class UserController {
     	if(userServ.authenticateUser(email, password)) {
     		User loggedUser = userServ.findByEmail(email);
     		session.setAttribute("user_id", loggedUser.getId());
-    		return "redirect:/home";
+    		return "redirect:/courses";
     	}
         // Else, add error messages and return the login page
     	else {
@@ -72,8 +84,10 @@ public class UserController {
     		return "redirect:/login";
     	}
     }
-   
-    @GetMapping("/home")
+ // -------------------- COURSES ---------------------------//
+    
+    // DASHBOARD -  LIST  OF COURSES
+    @GetMapping("/courses")
     public String home(
     		HttpSession session,
     		Model model
@@ -87,6 +101,24 @@ public class UserController {
     	return "index.jsp";
     }
     
+    // NEW COURSE PAGE
+    @GetMapping("/courses/new")
+    public String newCourse(
+    		@ModelAttribute("courseObj") Course emptyCourse
+    ) {
+    	return "newCourse.jsp";
+    }
+    
+    // NEW COURSE FORM
+    @PostMapping("/courses/new")
+    public String createCourse(
+    		@ModelAttribute("courseObj") Course filledCourse
+    ) {
+    	courseServ.saveCourse(filledCourse);
+    	return "redirect:/courses";
+    }
+    
+ // -------------------- LOGOUT FUNCTIONALITY ---------------------------//
     @GetMapping("/logout")
 	public String logout(HttpSession session) {
 	    session.invalidate();

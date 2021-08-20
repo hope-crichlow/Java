@@ -1,5 +1,5 @@
 package com.hope.red.controllers;
 
-public class EventController {
+public class CourseController {
 
 }
