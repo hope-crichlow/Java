@@ -50,35 +50,41 @@ public class MainController {
 		return "redirect:/";
 	}
 
-// INDIVIDUAL PRODUCT PAGE
+// INDIVIDUAL PRODUCT PAGE - CREATING THE RELATIONSHIP
 	@GetMapping("/products/{id}")
 	public String oneProduct(
 			@PathVariable("id") Long prod_id,
 			Model model) {
 		
-		model.addAttribute("product", mainServ.findProduct(prod_id));
-		model.addAttribute("categories", mainServ.allCategories());
+		
+		Product oneProduct = mainServ.findProduct(prod_id);
+		model.addAttribute("product",oneProduct);
+		model.addAttribute("categories", mainServ.categoriesExcludingProduct(oneProduct));
 		
 		return "product.jsp";
 	}
-// 
+	
+	
 	@PostMapping("/products/{id}")
 	public String addCategoryToProduct(
 			@PathVariable("id")Long prod_id,
 			@RequestParam("category_id")Long cat_id
 			) {
-		// USING THE IDS, FIND PRODUCT AND CATEGORY OBJ 
+		// USING THE IDS, FIND PRODUCT OBJ AND CATEGORY OBJ 
 		Category oneCat = mainServ.findCategory(cat_id);
 		Product oneProd = mainServ.findProduct(prod_id);
+		
+		
 		
 		// ADDING THE RELATIONSHIP TO THE OBJECT 
 		oneCat.getProducts().add(oneProd); // Grab list of products from category object and add new product
 //		oneProd.getCategories().add(oneCat);
+	
 		
 		// SAVE THE NEW INFORMATION IN THE DB
 		mainServ.saveCat(oneCat);
 //		mainServ.saveProd(oneProd);
 		
-		return "redirect:/";
+		return "redirect:/products/" + prod_id;
 	}
 }

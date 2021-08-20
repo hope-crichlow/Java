@@ -37,22 +37,22 @@
 			<h4>Categories:</h4>
 			
 			<ul>
-				<c:forEach var="category" items="${categories}">
+				<c:forEach var="category" items="${product. categories}">
 					<li><c:out value="${category.name}"/></li>
 				</c:forEach>
 			</ul>
-		</div>
+		</div> 
 		
 		<div>
 			<h3>Add Category</h3>
-			<form action="/products/${product_id}" method="POST">
-			<select name="category_id" id="">
-				<c:forEach var="category" items="${categories}">
-					<option value="${category.id}">
-						<c:out value="${category.name}"/>
-					</option>
-				</c:forEach>
-			</select>
+			<form action="/products/${product.id}" method="POST">
+				<select name="category_id">
+					<c:forEach var="category" items="${categories}">
+						<option value="${category.id}">
+							<c:out value="${category.name}"/>
+						</option>
+					</c:forEach>
+				</select>
 			
 			<div class="d-flex align-items-end flex-column mt-3">
 				<button class="btn btn-primary px-5" type="submit">Add Category</button>
