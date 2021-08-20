@@ -17,10 +17,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
 import com.hope.red.models.Course;
 import com.hope.red.models.User;
+import com.hope.red.models.UserCourse;
 import com.hope.red.services.CourseService;
+import com.hope.red.services.UserCourseService;
 import com.hope.red.services.UserService;
 import com.hope.red.validator.UserValidator;
 
@@ -31,6 +32,9 @@ public class MainController {
 	
 	@Autowired
 	private CourseService courseServ;
+	
+	@Autowired
+	private UserCourseService userCourseServ;
 	
 	@Autowired
 	private UserValidator userValidator;
@@ -95,6 +99,7 @@ public class MainController {
     // DASHBOARD -  LIST  OF COURSES
     @GetMapping("/courses")
     public String home(
+    		@ModelAttribute("userCourseObj") UserCourse emptyUserCourse,
     		HttpSession session,
     		Model model
     ) {
@@ -111,6 +116,25 @@ public class MainController {
     	model.addAttribute("listOfCourses", allCourses);
     	
     	return "index.jsp";
+    }
+    
+    // DASHBOARD - JOIN COURSE
+    @PostMapping("/join/process")
+    public String joinCourse(
+    		@ModelAttribute("userCourseObj") UserCourse filledUserCourse,
+    		HttpSession session,
+    		BindingResult result, 
+    		Model model
+    		
+    		
+    ) {
+    	Long currentUserId = (Long) session.getAttribute("user_id");
+    	User currentUser = userServ.findUserById(currentUserId);
+ 		// Pass user object to JSP 
+    	model.addAttribute("currentUser", currentUser);
+    	
+    	userCourseServ.saveUserCourse(filledUserCourse);
+    	return "redirect:/courses/" + filledUserCourse.getCourse().getId();
     }
     
     // NEW COURSE PAGE

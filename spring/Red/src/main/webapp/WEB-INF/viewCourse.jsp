@@ -59,7 +59,8 @@
 				</tbody>
 			  
 			</table>
-			
+			<a href="/courses/${courseObj.id}/edit">Edit</a>
+			<a href="/courses/${courseObj.id}/delete">Delete Functionality</a>
 		</div>
 		
 	</div>

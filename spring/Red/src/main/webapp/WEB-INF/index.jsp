@@ -62,7 +62,14 @@
 							<td>${eachCourse.instructor}</td>
 							<td>${eachCourse.capacity}</td>
 							<td>
-								<a href="">Add functionality</a> 
+								<form:form action="/join/process" method="post" modelAttribute="userCourseObj">
+									<form:input  path="user" value="${currentUser.id}" type="hidden"/>
+									<form:input path="course" value="${eachCourse.id}" type="hidden" />
+									<button class="btn " type="submit">
+										<a href="#">Join</a> 
+									</button>
+								</form:form>
+							
 								<a href="/courses/${eachCourse.id}/edit">Edit</a>
 							</td>
 						</tr>
