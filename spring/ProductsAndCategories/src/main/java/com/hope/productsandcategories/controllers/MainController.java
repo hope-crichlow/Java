@@ -49,20 +49,41 @@ public class MainController {
 		mainServ.saveCat(filledCat);
 		return "redirect:/";
 	}
-// INDIVIDUAL PRODUCT PAGE - CREATING THE RELATIONSHIP
-		@GetMapping("/categories/{id}")
-		public String oneCategory(
-				@PathVariable("id") Long cat_id,
-				Model model) {
-			
-			
-			Category oneCategory = mainServ.findCategory(cat_id);
-			model.addAttribute("category",oneCategory);
-			model.addAttribute("products", mainServ.productsExcludingCategory(oneCategory));
-			
-			return "category.jsp";
-		}
+// INDIVIDUAL CATEGORY PAGE - CREATING THE RELATIONSHIP
+	@GetMapping("/categories/{id}")
+	public String oneCategory(
+			@PathVariable("id") Long cat_id,
+			Model model) {
+		
+		
+		Category oneCategory = mainServ.findCategory(cat_id);
+		model.addAttribute("category",oneCategory);
+		model.addAttribute("products", mainServ.productsExcludingCategory(oneCategory));
+		
+		return "category.jsp";
+	}
 
+	@PostMapping("/categories/{id}")
+	public String addProductToCategory(
+			@PathVariable("id")Long cat_id,
+			@RequestParam("product_id")Long prod_id
+			) {
+		// USING THE IDS, FIND PRODUCT OBJ AND CATEGORY OBJ 
+		Category oneCat = mainServ.findCategory(cat_id);
+		Product oneProd = mainServ.findProduct(prod_id);
+		
+		
+		
+		// ADDING THE RELATIONSHIP TO THE OBJECT 
+			// Grab list of products from category object and add new product
+		oneProd.getCategories().add(oneCat);
+	
+		
+		// SAVE THE NEW INFORMATION IN THE DB
+		mainServ.saveProd(oneProd);
+		
+		return "redirect:/categories/" + cat_id;
+	}
 
 // INDIVIDUAL PRODUCT PAGE - CREATING THE RELATIONSHIP
 	@GetMapping("/products/{id}")

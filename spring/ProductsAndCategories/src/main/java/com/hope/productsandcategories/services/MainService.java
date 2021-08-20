@@ -33,9 +33,9 @@ public class MainService {
 		return prodRepo.findById(prod_id).orElse(null);
 	}
 	
-	public Object productsExcludingCategory(Category oneCategory) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> productsExcludingCategory(Category c) {
+	
+		return prodRepo.findByCategoriesNotContains(c);
 	}
 
 // ------------------- CRUD PRODUCTS ------------------- //

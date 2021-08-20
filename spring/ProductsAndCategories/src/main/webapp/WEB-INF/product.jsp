@@ -44,7 +44,7 @@
 		</div> 
 		
 		<div>
-			<h3>Add Category</h3>
+			<h4>Add Category</h4>
 			<form action="/products/${product.id}" method="POST">
 				<select name="category_id">
 					<c:forEach var="category" items="${categories}">

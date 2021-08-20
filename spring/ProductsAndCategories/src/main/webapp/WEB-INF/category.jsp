@@ -41,13 +41,13 @@
 			</ul>
 		</div> 
 		
-	<%-- 	<div>
-			<h3>Add Category</h3>
-			<form action="/products/${product.id}" method="POST">
-				<select name="category_id">
-					<c:forEach var="category" items="${categories}">
-						<option value="${category.id}">
-							<c:out value="${category.name}"/>
+		<div>
+			<h4>Add Product:</h4>
+			<form action="/categories/${category.id}" method="POST">
+				<select name="product_id">
+					<c:forEach var="product" items="${products}">
+						<option value="${product.id}">
+							<c:out value="${product.name}"/>
 						</option>
 					</c:forEach>
 				</select>
@@ -56,7 +56,7 @@
 				<button class="btn btn-primary px-5" type="submit">Add Category</button>
 			</div>
 			</form>
-		</div> --%>
+		</div>
 		
 	</div>
 </body>
