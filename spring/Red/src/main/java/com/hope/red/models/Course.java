@@ -35,8 +35,8 @@ public class Course {
     @NotEmpty(message = "Instructor name must be present")
     private String instructor;
     
-    @NotNull(message = "Capacity of students must be grater than 0")
-    @Range(min = 1, max = 10)
+    @NotNull
+    @Range(min = 1, max = 10, message = "Capacity of students must be grater than 0")
     private int capacity;
     
     // CREATED AND UPDATED AT

@@ -134,6 +134,9 @@ public class MainController {
     	}
     }
     
+    // EDIT COURSE PAGE
+    // EDIT COURSE FORM
+    
  // -------------------- LOGOUT FUNCTIONALITY ---------------------------//
     @GetMapping("/logout")
 	public String logout(HttpSession session) {
