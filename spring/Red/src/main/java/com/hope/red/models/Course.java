@@ -101,6 +101,12 @@ public class Course {
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
+	public List<UserCourse> getMembers() {
+		return members;
+	}
+	public void setMembers(List<UserCourse> members) {
+		this.members = members;
+	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}

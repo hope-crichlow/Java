@@ -167,6 +167,20 @@ public class MainController {
 		}
 	 }
     
+    // DISPLAY COURSE
+    @GetMapping("/courses/{id}")
+    public String viewCourse(
+    		@PathVariable("id") Long id, 
+    		Model model
+    ) {
+    	// GRAB ONE COURSE FROM DB
+    	Course oneCourse = courseServ.findOneCourse(id);
+    	
+    	// PASS COURSE TO THE JSP 
+    	model.addAttribute("courseObj", oneCourse);
+    	return "viewCourse.jsp";
+    }
+    
  // -------------------- LOGOUT FUNCTIONALITY ---------------------------//
     @GetMapping("/logout")
 	public String logout(HttpSession session) {
