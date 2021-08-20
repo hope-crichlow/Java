@@ -48,14 +48,16 @@
 				</thead>
 			  
 				<tbody>
-					<%-- <c:forEach items="${listOfMembers}" var="eachMember"  varStatus="loop">
+	
+				
+					<c:forEach items="${courseObj.members}" var="member"  varStatus="loop">
 						<tr>
-							<td>${eachMember.name}</td>
-							<td>${eachMember.createdAt}</td>
+							<td>${member.user.name}</td>
+							<td>${member.createdAt}</td>
 							<td><a href="/courses/${eachMember.id}/remove">Remove</a></td>
 				
 						</tr>
-					</c:forEach> --%>
+					</c:forEach>
 				</tbody>
 			  
 			</table>

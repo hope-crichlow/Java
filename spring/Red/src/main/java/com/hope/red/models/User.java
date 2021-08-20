@@ -90,6 +90,12 @@ public class User {
 	public void setPasswordConfirmation(String passwordConfirmation) {
 		this.passwordConfirmation = passwordConfirmation;
 	}
+	public List<UserCourse> getJoined_courses() {
+		return joined_courses;
+	}
+	public void setJoined_courses(List<UserCourse> joined_courses) {
+		this.joined_courses = joined_courses;
+	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}

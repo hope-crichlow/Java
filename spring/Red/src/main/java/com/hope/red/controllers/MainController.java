@@ -126,7 +126,6 @@ public class MainController {
     		BindingResult result, 
     		Model model
     		
-    		
     ) {
     	Long currentUserId = (Long) session.getAttribute("user_id");
     	User currentUser = userServ.findUserById(currentUserId);
@@ -194,14 +193,19 @@ public class MainController {
     // DISPLAY COURSE
     @GetMapping("/courses/{id}")
     public String viewCourse(
-    		@PathVariable("id") Long id, 
+    		@PathVariable("id") Long id,
     		Model model
     ) {
     	// GRAB ONE COURSE FROM DB
     	Course oneCourse = courseServ.findOneCourse(id);
+    	List<UserCourse> allMembers = oneCourse.getMembers();
     	
     	// PASS COURSE TO THE JSP 
     	model.addAttribute("courseObj", oneCourse);
+    	model.addAttribute("listOfMembers", allMembers);
+    	System.out.println(oneCourse.getMembers());
+    	
+    	
     	return "viewCourse.jsp";
     }
     

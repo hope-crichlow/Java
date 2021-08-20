@@ -66,11 +66,11 @@
 									<form:input  path="user" value="${currentUser.id}" type="hidden"/>
 									<form:input path="course" value="${eachCourse.id}" type="hidden" />
 									<button class="btn " type="submit">
-										<a href="#">Join</a> 
+										<a href="#">Add</a> 
 									</button>
 								</form:form>
 							
-								<a href="/courses/${eachCourse.id}/edit">Edit</a>
+
 							</td>
 						</tr>
 					</c:forEach>
