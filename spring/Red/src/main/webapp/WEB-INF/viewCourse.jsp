@@ -53,7 +53,8 @@
 					<c:forEach items="${courseObj.members}" var="member"  varStatus="loop">
 						<tr>
 							<td>${member.user.name}</td>
-							<td>${member.createdAt}</td>
+							
+							<td><fmt:formatDate pattern="MMMM d, yyyy" value="${member.createdAt}"/></td>
 							<td><a href="/${member.id}/remove">Remove</a></td>
 				
 						</tr>

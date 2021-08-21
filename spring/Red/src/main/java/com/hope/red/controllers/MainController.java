@@ -53,7 +53,7 @@ public class MainController {
     // BASE ROUTE RENDERS LOGIN PAGE
     @GetMapping("/")
     public String base() {
-        return "loginPage.jsp";
+        return "regPage.jsp";
     }
     // REG FORM
     @PostMapping("/registration")

@@ -39,6 +39,7 @@
 		<div class="d-flex justify-content-around mb-3">
            
             <a href="/logout">Logout</a>
+            <a href="/courses/new">Create New Course</a>
         </div>
         
         <div class="m-5">
@@ -66,7 +67,7 @@
 									<form:input  path="user" value="${currentUser.id}" type="hidden"/>
 									<form:input path="course" value="${eachCourse.id}" type="hidden" />
 									<button class="btn " type="submit">
-										<a href="#">Add</a> 
+										Add
 									</button>
 								</form:form>
 							
