@@ -209,6 +209,17 @@ public class MainController {
     	return "viewCourse.jsp";
     }
     
+    // REMOVE PERSON FROM COURSE
+    @GetMapping("/{id}/delete")
+    public String removeStudent(
+    		@PathVariable("id") Long id
+    ) {
+    	// GRAB RELATIONSHIP FROM DB
+    	userCourseServ.deleteUC(id);
+    	
+    	return "redirect:/courses";
+    }
+    
  // -------------------- LOGOUT FUNCTIONALITY ---------------------------//
     @GetMapping("/logout")
 	public String logout(HttpSession session) {

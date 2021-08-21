@@ -54,7 +54,7 @@
 						<tr>
 							<td>${member.user.name}</td>
 							<td>${member.createdAt}</td>
-							<td><a href="/courses/${eachMember.id}/remove">Remove</a></td>
+							<td><a href="/${member.id}/delete">Remove</a></td>
 				
 						</tr>
 					</c:forEach>
