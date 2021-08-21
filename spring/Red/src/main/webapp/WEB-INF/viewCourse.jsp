@@ -31,10 +31,15 @@
 <body>
 	<div class="container">
 		<h1>${courseObj.name}</h1>
-		
-		<p>Instructor: ${courseObj.instructor}</p>
-		<p>Sign Ups: ${courseObj.getMembers().size()}</p>
-		
+		<div class="d-flex align-items-end justify-content-end ">
+            <a class="btn" href="/courses">Dashboard </a> 
+         
+            <a class="btn primary" href="/logout">Logout</a>
+        </div>
+		<div class="m-5">
+			<p>Instructor: ${courseObj.instructor}</p>
+			<p>Sign Ups: ${courseObj.getMembers().size()}</p>
+		</div>
 		<div class="m-5">
 		
 			<table class="table table-striped">
@@ -62,8 +67,12 @@
 				</tbody>
 			  
 			</table>
-			<a href="/courses/${courseObj.id}/edit">Edit</a>
-			<a href="/${courseObj.id}/delete">Delete</a>
+			
+			<div class="d-flex justify-content-around">
+           		<a href="/courses/${courseObj.id}/edit">Edit</a>
+				<a href="/${courseObj.id}/delete">Delete</a>
+        	</div>
+		
 		</div>
 		
 	</div>

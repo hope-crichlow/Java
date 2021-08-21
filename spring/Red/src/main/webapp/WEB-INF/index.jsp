@@ -36,10 +36,10 @@
         </div>
 		
 	
-		<div class="d-flex justify-content-around mb-3">
+		<div class="d-flex align-items-end justify-content-end mb-3">
            
             <a href="/logout">Logout</a>
-            <a href="/courses/new">Create New Course</a>
+           
         </div>
         
         <div class="m-5">
@@ -78,7 +78,10 @@
 				</tbody>
 			  
 			</table>
-			
+			<div class="d-flex align-items-start justify-content-start mb-3">
+           
+            <a href="/courses/new">Create New Course</a>
+        </div>
 		</div>
 	</div>
 </body>

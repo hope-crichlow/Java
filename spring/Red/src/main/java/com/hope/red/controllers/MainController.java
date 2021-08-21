@@ -52,7 +52,7 @@ public class MainController {
     }
     // BASE ROUTE RENDERS LOGIN PAGE
     @GetMapping("/")
-    public String base() {
+    public String base(@ModelAttribute("userObj") User emptyUser) {
         return "regPage.jsp";
     }
     // REG FORM

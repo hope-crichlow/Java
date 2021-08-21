@@ -70,7 +70,7 @@
 				
 				
 				<div class="d-flex align-items-end flex-column mt-3">
-					<button class="btn btn-primary px-5" type="submit">Create</button>
+					<button class="btn btn-primary px-5" type="submit">Update</button>
 				</div>
 				
 			</form:form>
