@@ -209,8 +209,19 @@ public class MainController {
     	return "viewCourse.jsp";
     }
     
-    // REMOVE PERSON FROM COURSE
+    // DELETE COURSE
     @GetMapping("/{id}/delete")
+    public String deleteCourse(
+    		@PathVariable("id") Long id
+    ) {
+    	// GRAB RELATIONSHIP FROM DB
+    	courseServ.deleteCourse(id);
+    	
+    	return "redirect:/courses";
+    }
+    
+    // REMOVE PERSON FROM COURSE
+    @GetMapping("/{id}/remove")
     public String removeStudent(
     		@PathVariable("id") Long id
     ) {

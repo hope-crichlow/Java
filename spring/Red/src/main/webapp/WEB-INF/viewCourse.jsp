@@ -54,7 +54,7 @@
 						<tr>
 							<td>${member.user.name}</td>
 							<td>${member.createdAt}</td>
-							<td><a href="/${member.id}/delete">Remove</a></td>
+							<td><a href="/${member.id}/remove">Remove</a></td>
 				
 						</tr>
 					</c:forEach>
@@ -62,7 +62,7 @@
 			  
 			</table>
 			<a href="/courses/${courseObj.id}/edit">Edit</a>
-			<a href="/courses/${courseObj.id}/delete">Delete Functionality</a>
+			<a href="/${courseObj.id}/delete">Delete</a>
 		</div>
 		
 	</div>

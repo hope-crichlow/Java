@@ -30,4 +30,9 @@ public class CourseService {
 	public Course findOneCourse(Long id) {
 		return courseRepo.findById(id).orElse(null);
 	}
+	
+	// DELETE COURSE
+		public void deleteCourse(Long id) {
+			courseRepo.deleteById(id);
+		}
 }
