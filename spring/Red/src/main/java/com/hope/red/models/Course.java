@@ -35,9 +35,9 @@ public class Course {
     @NotEmpty(message = "Instructor name must be present")
     private String instructor;
     
-    @NotNull
-    @Range(min = 1, max = 10, message = "Capacity of students must be grater than 0")
-    private int capacity;
+    @NotNull(message = "Don't forget to add a capacity")
+    @Range(min = 1, message = "Capacity of students must be grater than 0")
+    private Long capacity;
     
     // CREATED AND UPDATED AT
     @Column(updatable=false)
@@ -69,7 +69,7 @@ public class Course {
     	
     }
     // FULL CONSTRUCTOR
-	public Course(String name, String instructor, int capacity) {
+	public Course(String name, String instructor, Long capacity) {
 		super();
 		this.name = name;
 		this.instructor = instructor;
@@ -95,10 +95,10 @@ public class Course {
 	public void setInstructor(String instructor) {
 		this.instructor = instructor;
 	}
-	public int getCapacity() {
+	public Long getCapacity() {
 		return capacity;
 	}
-	public void setCapacity(int capacity) {
+	public void setCapacity(Long capacity) {
 		this.capacity = capacity;
 	}
 	public List<UserCourse> getMembers() {
